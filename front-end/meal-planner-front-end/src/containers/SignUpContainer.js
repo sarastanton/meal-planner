@@ -11,7 +11,7 @@ class SignUpContainer extends Component {
   render() {
     return(
       <React.Fragment>
-        <div>
+        <div className="container">
           This is the SignUp Container component.
         </div>
       </React.Fragment>

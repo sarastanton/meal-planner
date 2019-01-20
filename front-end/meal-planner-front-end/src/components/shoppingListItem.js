@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ShoppingListItem = props =>
-  <div>
+  <div className="card">
     This is the ShoppingListItem component.
   </div>
 

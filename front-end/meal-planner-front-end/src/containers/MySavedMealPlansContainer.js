@@ -13,10 +13,10 @@ class MySavedMealPlansContainer extends Component {
   render() {
     return(
       <React.Fragment>
-        <div>
+        <div className="container">
           This is the MySavedMealPlans Container component.
-        </div>
         <Mealdays />
+        </div>
       </React.Fragment>
     )
   }

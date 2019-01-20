@@ -12,10 +12,10 @@ class MyRecipesContainer extends Component {
   render() {
     return(
       <React.Fragment>
-        <div>
+        <div className="container">
           This is the MyRecipes Container component.
-        </div>
         <Recipe />
+        </div>
       </React.Fragment>
     )
   }

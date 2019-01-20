@@ -12,10 +12,10 @@ class ShoppingListContainer extends Component {
   render() {
     return(
       <React.Fragment>
-        <div>
+        <div className="container">
           This is the ShoppingListContainer Container component.
+          <ShoppingListItem />
         </div>
-        <ShoppingListItem />
       </React.Fragment>
     )
   }

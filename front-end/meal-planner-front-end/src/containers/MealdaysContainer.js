@@ -12,10 +12,10 @@ class MealdaysContainer extends Component {
   render() {
     return(
       <React.Fragment>
-        <div>
+        <div className="container">
           This is the Mealdays Container component.
-        </div>
         <Mealdays />
+        </div>
       </React.Fragment>
     )
   }

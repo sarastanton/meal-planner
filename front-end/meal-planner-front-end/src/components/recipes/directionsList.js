@@ -1,7 +1,7 @@
 import React from 'react'
 
 const DirectionsList = props =>
-  <div>
+  <div className="card">
     This is the DirectionsList component.
   </div>
 

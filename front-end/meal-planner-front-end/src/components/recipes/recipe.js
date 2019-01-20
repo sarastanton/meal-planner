@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Recipe = props =>
-  <div>
+  <div className="card">
     This is the Recipe component.
   </div>
 

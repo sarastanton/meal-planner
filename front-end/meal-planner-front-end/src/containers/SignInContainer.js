@@ -11,7 +11,7 @@ class SignInContainer extends Component {
   render() {
     return(
       <React.Fragment>
-        <div>
+        <div className="container">
           This is the SignIn Container component.
         </div>
       </React.Fragment>
