@@ -17,6 +17,16 @@
   padding: 10px;
 }
 
+form {
+  text-align: left;
+  padding: 20px;
+}
+
+input, textarea  {
+  float: right;
+}
+
+
 
 
 /* Chalkboard frame idea */

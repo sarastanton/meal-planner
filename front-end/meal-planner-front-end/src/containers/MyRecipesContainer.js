@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Recipe from '../components/recipes/recipe'
+import RecipesForm from '../components/recipes/recipesForm'
 import { connect } from 'react-redux'
 
 class MyRecipesContainer extends Component {
@@ -15,6 +16,7 @@ class MyRecipesContainer extends Component {
         <div className="container">
           This is the MyRecipes Container component.
         <Recipe />
+        <RecipesForm />
         </div>
       </React.Fragment>
     )
