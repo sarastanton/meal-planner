@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import IngredientsList from '../components/recipes/ingredientsList';
 import DirectionsList from '../components/recipes/directionsList';
-import Recipe from '../components/recipes/recipe';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+// import { getRecipes } from '../actions/recipes';
 
 class RecipesContainer extends Component {
 
@@ -11,11 +11,15 @@ class RecipesContainer extends Component {
     this.state = {}
   }
 
+  componentDidMount() {
+    // this.props.getRecipes()
+  }
+
   render() {
     return(
       <React.Fragment>
         <div className="container">
-          This is the Recipes Container component.
+          Recipe:
         <IngredientsList />
         <DirectionsList />
         </div>
@@ -25,14 +29,11 @@ class RecipesContainer extends Component {
 
 }
 
-const mapStateToProps = state => {
-  return {
-    state
-  }
+const mapStateToProps = (state) => {
+  return ({
+    recipes: state.recipes
+  })
 }
 
-const mapDispatchToProps = dispatch => ({
 
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(RecipesContainer)
+export default connect(mapStateToProps)(RecipesContainer)

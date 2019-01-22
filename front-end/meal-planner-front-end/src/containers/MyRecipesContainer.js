@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
-import Recipe from '../components/recipes/recipe'
-import RecipesForm from '../components/recipes/recipesForm'
+import Recipe from '../components/recipes/recipe';
+import RecipeForm from '../components/recipes/recipeForm';
+import { getMyRecipes } from '../actions/myRecipes'
 import { connect } from 'react-redux'
 
 class MyRecipesContainer extends Component {
 
-  constructor() {
-    super()
-    this.state = {}
+  componentDidMount() {
+    this.props.getMyRecipes()
   }
 
   render() {
     return(
       <React.Fragment>
         <div className="container">
-          This is the MyRecipes Container component.
+          My Saved Recipes:
+          {this.props.recipes}
         <Recipe />
-        <RecipesForm />
+        <RecipeForm />
         </div>
       </React.Fragment>
     )
@@ -24,14 +25,10 @@ class MyRecipesContainer extends Component {
 
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    state
+    recipes: state.myRecipes
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(MyRecipesContainer)
+export default connect(mapStateToProps, { getMyRecipes })(MyRecipesContainer)
