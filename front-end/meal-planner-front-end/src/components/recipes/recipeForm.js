@@ -28,6 +28,7 @@ class RecipeForm extends Component {
 
     return (
       <div className="card">
+      This is the RecipeForm Component.
       {/*
       <form onSubmit={this.handleOnSubmit}>
         <p>
