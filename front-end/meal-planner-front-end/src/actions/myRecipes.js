@@ -1,26 +1,14 @@
 const API_URL = process.env.REACT_APP_API_URL;
 
-const setRecipes = recipes => {
-  return {
-    type: "LOADED_USER_RECIPES",
-    recipes
-  }
-}
-
-const addRecipe = recipe => {
-  return {
-    type: "CREATE_DB_RECIPE",
-    recipe
-  }
-}
-
 export const getMyRecipes = () => {
   // debugger
   return dispatch => {
     return fetch(`${API_URL}/recipes`)
     .then(response => response.json())
-    .then(recipes => dispatch(
-      setRecipes(recipes)))
+    .then(recipes => dispatch({
+      type: "FETCH_USER_RECIPES",
+      recipes: recipes
+    }))
     .catch(error => console.log(error))
   }
 }
@@ -32,7 +20,7 @@ export const receiveRecipeFormData = recipeFormData => {
   }
 }
 
-export const createNewDBRecipe = recipe => {
+export const createNewDBRecipe = recipeData => {
   return dispatch => {
     debugger
     return fetch(`${API_URL}/recipes`, {
@@ -40,13 +28,15 @@ export const createNewDBRecipe = recipe => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ recipe: recipe })
+      body: JSON.stringify({ recipe: recipeData })
     })
-      .then(response => response.json())
-      .then(recipe => {
-        dispatch(addRecipe(recipe))
+    .then(response => response.json())
+    .then(recipe => {
+      dispatch({
+        type: "CREATE_DB_RECIPE",
+        recipe
       })
-      .catch(error => console.log(error))
-
+    })
+    .catch(error => console.log(error))
   }
 }

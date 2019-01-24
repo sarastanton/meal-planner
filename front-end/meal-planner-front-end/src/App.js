@@ -7,7 +7,6 @@ import ShoppingListContainer from './containers/ShoppingListContainer';
 import SignInContainer from './containers/SignInContainer';
 import SignUpContainer from './containers/SignUpContainer';
 
-
 import './App.css';
 
 class App extends Component {

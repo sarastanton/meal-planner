@@ -3,52 +3,52 @@ import { connect } from 'react-redux';
 import { receiveRecipeFormData } from '../../actions/myRecipes'
 import { createNewDBRecipe } from '../../actions/myRecipes'
 
-const initialState = {
-  quantity: '',
-  unit: '',
-  description: '',
-  directions: ''
-}
-
 class RecipeForm extends Component {
 
-  handleSubmit = event => {
+  handleOnSubmit = event => {
     event.preventDefault()
-    this.props.createNewDBRecipe(this.props.rerecipeFormData)
+    this.props.createNewDBRecipe(this.props.recipeFormData)
   }
 
-  handleChange = event => {
+  handleOnChange = event => {
+    debugger
     const { name, value } = event.target;
-    const currentRecipeFormData = {... this.props.recipeFormData, [name]: value};
+    const currentRecipeFormData = {...this.props.recipeFormData, [name]: value};
     this.props.receiveRecipeFormData(currentRecipeFormData)
     debugger
   }
 
-  render() {
+  componentWillMount() {
     debugger
-    const { quantity, unit, description, directions } = this.props.recipeFormData;
+  }
+
+  render() {
+    // debugger
+    // const { quantity, unit, description, directions } = this.props.recipeFormData;
 
     return (
       <div className="card">
-        <form onSubmit={this.handleSubmit}>
-          <p>
-            <label htmlFor="quantity">Quantity (should be a number): </label>
-            <input type="text" name="quantity" value={quantity} onChange={this.handleChange}/>
-          </p>
-          <p>
-            <label htmlFor="unit">Unit (i.e. teaspoon, cup, dash...): </label>
-            <input type="text" name="unit" value={unit} onChange={this.handleChange}/>
-          </p>
-          <p>
-            <label htmlFor="description">Description: </label>
-            <input type="text" name="description" value={description} onChange={this.handleChange}/>
-          </p>
-          <p>
-            <label htmlFor="directions">Directions: </label>
-            <textarea name="directions" value={directions} onChange={this.handleChange}/>
-          </p>
-          <input type="submit" />
-        </form>
+      {/*
+      <form onSubmit={this.handleOnSubmit}>
+        <p>
+          <label htmlFor="quantity">Quantity (should be a number): </label>
+          <input type="text" name="quantity" value={this.props.recipeFormData.quantity} onChange={this.handleOnChange}/>
+        </p>
+        <p>
+          <label htmlFor="unit">Unit (i.e. teaspoon, cup, dash...): </label>
+          <input type="text" name="unit" value={this.props.recipeFormData.unit} onChange={this.handleOnChange}/>
+        </p>
+        <p>
+          <label htmlFor="description">Description: </label>
+          <input type="text" name="description" value={this.props.recipeFormData.description} onChange={this.handleOnChange}/>
+        </p>
+        <p>
+          <label htmlFor="directions">Directions: </label>
+          <textarea name="directions" value={this.props.recipeFormData.directions} onChange={this.handleOnChange}/>
+        </p>
+        <input type="submit" />
+      </form>
+      */}
       </div>
     )
   }
@@ -56,9 +56,30 @@ class RecipeForm extends Component {
 }
 
 const mapStateToProps = state => {
-  return ({
+  return {
     recipeFormData: state.recipeFormData
-  })
+  }
 }
 
 export default connect(mapStateToProps, { createNewDBRecipe, receiveRecipeFormData })(RecipeForm)
+
+
+// <form onSubmit={this.handleOnSubmit}>
+//   <p>
+//     <label htmlFor="quantity">Quantity (should be a number): </label>
+//     <input type="text" name="quantity" value={quantity} onChange={this.handleOnChange}/>
+//   </p>
+//   <p>
+//     <label htmlFor="unit">Unit (i.e. teaspoon, cup, dash...): </label>
+//     <input type="text" name="unit" value={unit} onChange={this.handleOnChange}/>
+//   </p>
+//   <p>
+//     <label htmlFor="description">Description: </label>
+//     <input type="text" name="description" value={description} onChange={this.handleOnChange}/>
+//   </p>
+//   <p>
+//     <label htmlFor="directions">Directions: </label>
+//     <textarea name="directions" value={directions} onChange={this.handleOnChange}/>
+//   </p>
+//   <input type="submit" />
+// </form>

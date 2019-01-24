@@ -7,27 +7,33 @@ import { connect } from 'react-redux'
 class MyRecipesContainer extends Component {
 
   componentDidMount() {
+    console.log(this.props)
+    console.log("MyRecipesContainer line 12")
+    debugger
     this.props.getMyRecipes()
   }
 
   render() {
+    console.log(this.props)
+    console.log("MyRecipesContainer line 19")
+    debugger
     return(
       <React.Fragment>
         <div className="container">
           My Saved Recipes:
-          {this.props.recipes}
-        <Recipe />
+          {console.log(this.props.recipes)}
+          {this.props.recipes.recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />) }
         <RecipeForm />
         </div>
       </React.Fragment>
     )
   }
-
 }
 
 const mapStateToProps = (state) => {
   return {
-    recipes: state.myRecipes
+    recipes: state.recipes,
+    recipe: state.recipe
   }
 }
 
