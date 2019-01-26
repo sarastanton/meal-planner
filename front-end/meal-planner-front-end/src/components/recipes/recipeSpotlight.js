@@ -6,7 +6,7 @@ class RecipeSpotlight extends Component {
 
   render() {
     console.log(this.props)
-    debugger
+    // debugger
     if (Object.entries(this.props.recipeSelection).length !== 0) {
       return (
         <div className="card" key={this.props.recipeSelection.id}>
@@ -16,7 +16,7 @@ class RecipeSpotlight extends Component {
             <br />
             <p><strong> Ingredients: </strong></p>
             <ul>
-              {this.props.recipeSelection.ingredients.map(ingredient => <li> {ingredient.description} </li>)}
+              {this.props.recipeSelection.ingredients.map(ingredient => <li> {ingredient.quantity} {ingredient.unit} {ingredient.description} </li>)}
             </ul>
           </React.Fragment>
         </div>
