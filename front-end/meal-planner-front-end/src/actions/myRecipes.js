@@ -20,6 +20,14 @@ export const receiveRecipeFormData = recipeFormData => {
   }
 }
 
+export const sendRecipeSelection = selection => {
+  console.log(selection)
+  return {
+    type: "SEND_RECIPE_SELECTION",
+    selection
+  }
+}
+
 export const createNewDBRecipe = recipeData => {
   return dispatch => {
     debugger

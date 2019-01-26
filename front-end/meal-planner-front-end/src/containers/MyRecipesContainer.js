@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Recipe from '../components/recipes/recipe';
+import RecipeSpotlight from '../components/recipes/recipeSpotlight';
 import RecipeForm from '../components/recipes/recipeForm';
 import { getMyRecipes } from '../actions/myRecipes'
 import { connect } from 'react-redux'
@@ -9,21 +10,23 @@ class MyRecipesContainer extends Component {
   componentDidMount() {
     console.log(this.props)
     console.log("MyRecipesContainer line 12")
-    debugger
+    // debugger
     this.props.getMyRecipes()
+
   }
 
   render() {
     console.log(this.props)
     console.log("MyRecipesContainer line 19")
-    debugger
+    // debugger
     return(
       <React.Fragment>
         <div className="container">
           My Saved Recipes:
           {console.log(this.props.recipes)}
           {this.props.recipes.recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />) }
-        <RecipeForm />
+          <RecipeSpotlight />
+          <RecipeForm />
         </div>
       </React.Fragment>
     )

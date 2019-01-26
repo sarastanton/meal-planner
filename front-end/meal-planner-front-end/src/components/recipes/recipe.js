@@ -1,28 +1,32 @@
 import React, { Component } from 'react'
-import IngredientsList from './ingredientsList'
-import DirectionsList from './directionsList'
+import { connect } from 'react-redux'
+import { sendRecipeSelection } from '../../actions/myRecipes'
 
-export default class Recipe extends Component {
+class Recipe extends Component {
 
-  handleOnClick = event => {
-    console.log(event.target.dataset.id)
+  handleOnClick = (props) => (event) => {
+    // debugger
+    const targetId = parseInt(event.target.dataset.id)
+    const recipeSelection = props.recipes.recipes.filter(recipe => recipe.id === targetId)[0]
+    // debugger
+    props.sendRecipeSelection(recipeSelection)
   }
 
   render() {
     return(
-      <div key={this.props.recipe.id} data-id={this.props.recipe.id} className="card" onClick={this.handleOnClick}>
-        <h3 data-id={this.props.recipe.id}>{this.props.recipe.name}</h3>
+      <div key={this.props.recipe.id} data-id={this.props.recipe.id} className="card" onClick={this.handleOnClick(this.props)}>
+        <h3 data-id={this.props.recipe.id} onClick={this.handleOnClick(this.props)}>{this.props.recipe.name}</h3>
       </div>
     )
   }
 
+}
 
+const mapStateToProps = (state) => {
+  return {
+    recipes: state.recipes,
+  }
 }
 
 
-// handleOnClick = event => {
-//   <React.Fragment>
-//     <IngredientsList id={event.target.key} />
-//     <DirectionsList id={event.target.key} />
-//   </React.Fragment>
-// }
+export default connect(mapStateToProps, { sendRecipeSelection })(Recipe)

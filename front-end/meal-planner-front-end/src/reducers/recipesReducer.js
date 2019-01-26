@@ -1,12 +1,13 @@
 const initialRecipeState = {
   recipes: [],
-  recipe: {},
+  newRecipe: {},
   recipeFormData: [{
     quantity: '',
     unit: '',
     description: '',
     directions: ''
-  }]
+  }],
+  recipeSelection: {}
 }
 
 export const recipesReducer = (state = initialRecipeState, action) => {
@@ -24,10 +25,16 @@ export const recipesReducer = (state = initialRecipeState, action) => {
         recipeFormData: action.recipeFormData
       };
 
+    case "SEND_RECIPE_SELECTION":
+      return {
+        ...state,
+        recipeSelection: action.selection
+      }
+
     case "CREATE_DB_RECIPE":
     return {
       ...state,
-      recipe: action.recipe
+      newRecipe: action.recipe
     };
 
     default:
