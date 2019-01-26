@@ -36,7 +36,7 @@ class MyRecipesContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     recipes: state.recipes,
-    recipe: state.recipe
+    recipe: state.newRecipe
   }
 }
 

@@ -1,30 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 
-const RecipeSpotlight = props => {
-  console.log(props)
-  debugger
-  if (props.recipeSelection != undefined) {
-    return (
-      <div className="card">
-        <React.Fragment>
-          <h2>{props.recipeSelection.name}</h2>
-        </React.Fragment>
-      </div>
-    )
-  } else {
-    return (
-      <div className="card">
-        "Select a recipe at left to see its details:"
-      </div>
-    )
+class RecipeSpotlight extends Component {
+
+  render() {
+    console.log(this.props)
+    debugger
+    if (Object.entries(this.props.recipeSelection).length !== 0) {
+      return (
+        <div className="card" key={this.props.recipeSelection.id}>
+          <React.Fragment>
+            <h3>{this.props.recipeSelection.name}</h3>
+            <p><strong> Directions: </strong></p> {this.props.recipeSelection.directions}
+            <br />
+            <p><strong> Ingredients: </strong></p>
+            <ul>
+              {this.props.recipeSelection.ingredients.map(ingredient => <li> {ingredient.description} </li>)}
+            </ul>
+          </React.Fragment>
+        </div>
+      )
+    } else {
+      return (
+        <div className="card">
+          Select a recipe at left to see its details:
+        </div>
+      )
+    }
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    recipeSelection: state.recipeSelection,
+    recipeSelection: state.recipes.recipeSelection,
   }
 }
 
