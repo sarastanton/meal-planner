@@ -13,13 +13,6 @@ export const getMyRecipes = () => {
   }
 }
 
-export const receiveRecipeFormData = recipeFormData => {
-  return {
-    type: "RECEIVE_FORM_DATA",
-    recipeFormData
-  }
-}
-
 export const sendRecipeSelection = selection => {
   console.log(selection)
   return {

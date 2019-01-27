@@ -1,12 +1,7 @@
 const initialRecipeState = {
   recipes: [],
   newRecipe: {},
-  recipeFormData: [{
-    quantity: '',
-    unit: '',
-    description: '',
-    directions: ''
-  }],
+  recipeFormData: [],
   recipeSelection: {}
 }
 
@@ -17,12 +12,6 @@ export const recipesReducer = (state = initialRecipeState, action) => {
       return {
         ...state,
         recipes: action.recipes
-      };
-
-    case "RECEIVE_FORM_DATA":
-      return {
-        ...state,
-        recipeFormData: action.recipeFormData
       };
 
     case "SEND_RECIPE_SELECTION":

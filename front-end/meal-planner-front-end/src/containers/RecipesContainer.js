@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import IngredientsList from '../components/recipes/ingredientsList';
 import DirectionsList from '../components/recipes/directionsList';
 import { connect } from 'react-redux';
 // import { getRecipes } from '../actions/recipes';
@@ -20,7 +19,6 @@ class RecipesContainer extends Component {
       <React.Fragment>
         <div className="container">
           Recipe:
-        <IngredientsList />
         <DirectionsList />
         </div>
       </React.Fragment>

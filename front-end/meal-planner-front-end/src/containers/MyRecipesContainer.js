@@ -8,26 +8,23 @@ import { connect } from 'react-redux'
 class MyRecipesContainer extends Component {
 
   componentDidMount() {
-    console.log(this.props)
-    console.log("MyRecipesContainer line 12")
     // debugger
     this.props.getMyRecipes()
 
   }
 
   render() {
-    console.log(this.props)
-    console.log("MyRecipesContainer line 19")
     // debugger
     return(
       <React.Fragment>
-        <div className="container">
-          My Saved Recipes:
-          {console.log(this.props.recipes)}
-          {this.props.recipes.recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />) }
-          <RecipeSpotlight />
-          <RecipeForm />
-        </div>
+        <div className="container my-recipes">
+          <div className="card-holder">
+            My Saved Recipes:
+            {this.props.recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />) }
+          </div>
+            <RecipeSpotlight />
+            <RecipeForm />
+          </div>
       </React.Fragment>
     )
   }
@@ -35,8 +32,7 @@ class MyRecipesContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    recipes: state.recipes,
-    recipe: state.newRecipe
+    recipes: state.recipes.recipes,
   }
 }
 

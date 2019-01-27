@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 class RecipeSpotlight extends Component {
 
   render() {
-    console.log(this.props)
     // debugger
     if (Object.entries(this.props.recipeSelection).length !== 0) {
       return (
@@ -18,6 +17,7 @@ class RecipeSpotlight extends Component {
             <ul>
               {this.props.recipeSelection.ingredients.map(ingredient => <li> {ingredient.quantity} {ingredient.unit} {ingredient.description} </li>)}
             </ul>
+            ADD EDIT/DELETE BUTTONS
           </React.Fragment>
         </div>
       )
@@ -29,6 +29,7 @@ class RecipeSpotlight extends Component {
       )
     }
   }
+
 }
 
 const mapStateToProps = (state) => {
