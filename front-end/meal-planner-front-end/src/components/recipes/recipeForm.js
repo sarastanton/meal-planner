@@ -3,40 +3,71 @@ import IngredientForm from './ingredientForm';
 import { connect } from 'react-redux';
 import { createNewDBRecipe } from '../../actions/myRecipes'
 
-let ingredientCounter = 1;
-let ingredientFormArray = [1];
-
 class RecipeForm extends Component {
 
+  constructor() {
+    super()
+    this.ingredientCounter = 1;
+    this.ingredientFormArray = [1];
+    this.state = {
+      name: '',
+      directions: '',
+      ingredients_attributes: []
+    };
+  }
 
-  handleOnSubmit = event => {
-    event.preventDefault();
-    this.props.createNewDBRecipe(this.props.recipeFormData)
+  createIngredientsArray = () => {
+    const ingredientsArray = [];
+
+    for (let i = 0; i < this.ingredientFormArray.length; i++) {
+      const element = `ingredient-${this.ingredientFormArray[i]}`;
+      const newIng = {
+        quantity: document.getElementsByClassName(`${element} quantity`).quantity.value,
+        unit: document.getElementsByClassName(`${element} unit`).unit.value,
+        description: document.getElementsByClassName(`${element} description`).description.value
+      };
+        ingredientsArray.push(newIng)
+    }
+
+    return ingredientsArray
   }
 
   handleOnClick = event => {
     event.preventDefault();
-    console.log("button clicked");
-    ++ingredientCounter;
-    ingredientFormArray.push(ingredientCounter);
+    ++this.ingredientCounter;
+    this.ingredientFormArray.push(this.ingredientCounter);
     this.forceUpdate()
   }
+
+  handleOnSubmit = event => {
+    event.preventDefault();
+    this.setState({
+      ingredients_attributes: [ ...this.state.ingredients_attributes, this.createIngredientsArray() ]
+    }, () => this.props.createNewDBRecipe(this.state));
+  }
+
+  handleOnChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
 
   render() {
     // debugger
     return (
-      <div className="card">
-        <form onSubmit={this.handleOnSubmit}>
+      <div className="card card-holder">
+        <form id="recipe-form" onSubmit={this.handleOnSubmit}>
           <p>
             <label htmlFor="name"><strong>Recipe Name: </strong></label>
-            <input type="text" name="name" value={this.props.recipeFormData.name} onChange={this.handleOnChange}/>
+            <input type="text" name="name" value={this.state.name} onChange={this.handleOnChange}/>
           </p>
           <p>
             <label htmlFor="directions"><strong>Directions:</strong> </label>
-            <textarea name="directions"/>
+            <textarea name="directions" onChange={this.handleOnChange}/>
           </p>
           <br/>
-          {ingredientFormArray.map(i => <IngredientForm count={i}/>)}
+          {this.ingredientFormArray.map(i => <IngredientForm count={i} createRecipeObj={this.createRecipeObj}/>)}
           <br />
           <button onClick={this.handleOnClick}>Add another ingredient:</button>
           <br />
@@ -48,31 +79,4 @@ class RecipeForm extends Component {
 
 }
 
-const mapStateToProps = state => {
-  return {
-    recipeFormData: state.recipes.recipeFormData
-  }
-}
-
-export default connect(mapStateToProps, { createNewDBRecipe })(RecipeForm)
-
-
-// <form onSubmit={this.handleOnSubmit}>
-//   <p>
-//     <label htmlFor="quantity">Quantity (should be a number): </label>
-//     <input type="text" name="quantity" value={quantity} onChange={this.handleOnChange}/>
-//   </p>
-//   <p>
-//     <label htmlFor="unit">Unit (i.e. teaspoon, cup, dash...): </label>
-//     <input type="text" name="unit" value={unit} onChange={this.handleOnChange}/>
-//   </p>
-//   <p>
-//     <label htmlFor="description">Description: </label>
-//     <input type="text" name="description" value={description} onChange={this.handleOnChange}/>
-//   </p>
-//   <p>
-//     <label htmlFor="directions">Directions: </label>
-//     <textarea name="directions" value={directions} onChange={this.handleOnChange}/>
-//   </p>
-//   <input type="submit" />
-// </form>
+export default connect(null, { createNewDBRecipe })(RecipeForm)

@@ -14,7 +14,6 @@ export const getMyRecipes = () => {
 }
 
 export const sendRecipeSelection = selection => {
-  console.log(selection)
   return {
     type: "SEND_RECIPE_SELECTION",
     selection
@@ -23,7 +22,6 @@ export const sendRecipeSelection = selection => {
 
 export const createNewDBRecipe = recipeData => {
   return dispatch => {
-    debugger
     return fetch(`${API_URL}/recipes`, {
       method: "POST",
       headers: {

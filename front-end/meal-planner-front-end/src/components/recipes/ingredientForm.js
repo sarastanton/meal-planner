@@ -6,15 +6,15 @@ const IngredientForm = props => {
       <strong>Ingredient {props.count}:</strong>
       <p>
         <label htmlFor="quantity">Quantity (should be a number): </label>
-        <input type="text" name="quantity"/>
+        <input className={`ingredient ingredient-${props.count} quantity`} type="text" name="quantity"/>
       </p>
       <p>
         <label htmlFor="unit">Unit (i.e. teaspoon, cup, dash...): </label>
-        <input type="text" name="unit"/>
+        <input className={`ingredient ingredient-${props.count} unit`} type="text" name="unit"/>
       </p>
       <p>
         <label htmlFor="description">Description: </label>
-        <input type="text" name="description"/>
+        <input className={`ingredient ingredient-${props.count} description`} type="text" name="description"/>
       </p>
       <br />
     </div>
