@@ -5,7 +5,9 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    @recipe.ingredient_recipes.build(recipe: @recipe).build_recipe
+    params[:recipe][:ingredients_attributes].each do |i|
+      @recipe.ingredients.build(quantity: i.quantity, unit: i.unit, description: i.description)
+    end
     byebug;
     if @recipe.save
       render json: @recipe, status: 200
@@ -49,7 +51,7 @@ class RecipesController < ApplicationController
     end
 
     def recipe_params
-      params.require(:recipe).permit([:name, :directions, ingredients_attributes: [:quantity, :unit, :description]])
+      params.require(:recipe).permit(:name, :directions, [ingredients_attributes: [:quantity, :unit, :description]])
   end
 
 end
