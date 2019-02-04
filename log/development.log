@@ -20434,3 +20434,81 @@ SystemExit (exit):
 (byebug):1:in `exit'
 (byebug):1:in `create'
 app/controllers/recipes_controller.rb:10:in `create'
+Started GET "/recipes" for 127.0.0.1 at 2019-02-04 04:56:55 -0600
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/sara/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by RecipesController#index as */*
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (1.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 3]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 5]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 6]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 7]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (15.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 8]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 9]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 10]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 11]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 12]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 13]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 16]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 19]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (314.43ms)
+Completed 200 OK in 367ms (Views: 258.4ms | ActiveRecord: 99.9ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2019-02-04 04:56:56 -0600
+Processing by RecipesController#index as */*
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 3]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 5]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 6]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 7]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 8]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 9]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 10]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 11]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 12]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 13]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 16]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredient_recipes" ON "ingredients"."id" = "ingredient_recipes"."ingredient_id" WHERE "ingredient_recipes"."recipe_id" = $1[0m  [["recipe_id", 19]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (44.32ms)
+Completed 200 OK in 47ms (Views: 41.9ms | ActiveRecord: 4.9ms)
+
+
