@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Mealdays = props => {
+const Mealdays = (props) => {
+  debugger
   return (
     <div className="card">
       <table>
@@ -13,7 +14,9 @@ const Mealdays = props => {
         <th> Saturday </th>
         <th> Sunday </th>
 
-        <tr>
+{/*  document.getElementsByClassName("breakfast")[0].children[0].parentElement.className */
+}
+        <tr className="breakfast">
           <td> Breakfast </td>
           <td> Monday Breakfast </td>
           <td> Tuesday Breakfast </td>
@@ -24,7 +27,7 @@ const Mealdays = props => {
           <td> Sunday Breakfast </td>
         </tr>
 
-        <tr>
+        <tr className="lunch">
           <td> Lunch </td>
           <td> Monday Lunch </td>
           <td> Tuesday Lunch </td>
@@ -35,7 +38,7 @@ const Mealdays = props => {
           <td> Sunday Lunch </td>
         </tr>
 
-        <tr>
+        <tr className="dinner">
           <td> Dinner </td>
           <td> Monday Dinner </td>
           <td> Tuesday Dinner </td>
@@ -45,10 +48,12 @@ const Mealdays = props => {
           <td> Saturday Dinner </td>
           <td> Sunday Dinner </td>
         </tr>
-
       </table>
-    </div>
+
+{      /* <p>this is props: {props.mealdays.monday.name}</p> */
+}    </div>
   )
+
 }
 
 export default Mealdays

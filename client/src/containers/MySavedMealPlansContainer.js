@@ -16,11 +16,12 @@ class MySavedMealPlansContainer extends Component {
   }
 
   render() {
+    debugger
     return(
       <React.Fragment>
         <div className="container">
           This is the MySavedMealPlans Container component.
-        <Mealdays />
+        <Mealdays mealdays={this.props.mealdays} />
         </div>
       </React.Fragment>
     )
