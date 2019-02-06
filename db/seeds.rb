@@ -7,44 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Ingredient.create(description: "bananas", quantity: "1", unit: "whole")
-Ingredient.create(description: "blueberries", quantity: "1", unit: "cup")
-Ingredient.create(description: "pancake mix", quantity: "1", unit: "serving")
-Ingredient.create(description: "eggs", quantity: "2", unit: "whole")
-Ingredient.create(description: "butter", quantity: "1", unit: "pat")
-Ingredient.create(description: "shredded cheese", quantity: "1", unit: "handful")
-Ingredient.create(description: "steel cut oats", quantity: "0.5", unit: "cup")
-Ingredient.create(description: "milk", quantity: "1", unit: "cup")
-Ingredient.create(description: "tuna", quantity: "1", unit: "can")
-Ingredient.create(description: "mayo", quantity: "1", unit: "tablespoon")
-Ingredient.create(description: "celery", quantity: "1", unit: "stick")
-Ingredient.create(description: "soup", quantity: "1", unit: "can")
-Ingredient.create(description: "lettuce", quantity: "1", unit: "head")
-Ingredient.create(description: "black olives", quantity: "1", unit: "cup")
-Ingredient.create(description: "feta cheese", quantity: "1", unit: "cup")
-Ingredient.create(description: "tomatoes", quantity: "2", unit: "whole")
-Ingredient.create(description: "sliced turkey breast", quantity: "3", unit: "slices")
-Ingredient.create(description: "provolone cheese", quantity: "2", unit: "slices")
-Ingredient.create(description: "lettuce", quantity: "0.25", unit: "head")
-Ingredient.create(description: "whole wheat pita", quantity: "1", unit: "whole")
-Ingredient.create(description: "zucchini", quantity: "3", unit: "whole")
-Ingredient.create(description: "ground beef", quantity: "0.5", unit: "pound")
-Ingredient.create(description: "onion", quantity: "0.5", unit: "whole")
-Ingredient.create(description: "shredded cheese", quantity: "3", unit: "handful")
-Ingredient.create(description: "chicken thighs", quantity: "1", unit: "pound")
-Ingredient.create(description: "kale", quantity: "1", unit: "bunch")
-Ingredient.create(description: "potatoes", quantity: "2", unit: "whole")
-Ingredient.create(description: "spaghetti", quantity: "2", unit: "servings")
-Ingredient.create(description: "spaghetti sauce", quantity: "1", unit: "jar")
-Ingredient.create(description: "spaghetti cheese", quantity: "2", unit: "tablespoons")
-Ingredient.create(description: "meatballs", quantity: "0.5", unit: "pound")
-Ingredient.create(description: "asparagus", quantity: "1", unit: "bunch")
-Ingredient.create(description: "sweet potatoes", quantity: "2", unit: "whole")
-Ingredient.create(description: "red bell pepper", quantity: "2", unit: "whole")
-Ingredient.create(description: "salmon", quantity: "2", unit: "fillets")
-Ingredient.create(description: "BBQ sauce", quantity: "0.5", unit: "bottle")
-
-
 Recipe.create(name: "Blueberry pancakes", directions: "Prepare pancake mix as directed on package. Serve with blueberries and banana slices.")
 Recipe.create(name: "Scrambled eggs", directions: "Combine ingredients and serve.")
 Recipe.create(name: "Oatmeal with blueberries and bananas", directions: "Prepare oatmeal as directed on package. Serve with blueberries and banana slices.")
@@ -83,6 +45,54 @@ Mealday.create(week_day: "Sunday", meal_name: "lunch", recipe_id: 4)
 Mealday.create(week_day: "Sunday", meal_name: "dinner", recipe_id: 10)
 
 
+Ingredient.create(recipe_id: 1, description: "bananas", quantity: "1", unit: "whole")
+Ingredient.create(recipe_id: 1, description: "blueberries", quantity: "1", unit: "cup")
+Ingredient.create(recipe_id: 1, description: "pancake mix", quantity: "1", unit: "serving")
+Ingredient.create(recipe_id: 1, description: "eggs", quantity: "2", unit: "whole")
+Ingredient.create(recipe_id: 2, description: "butter", quantity: "1", unit: "pat")
+Ingredient.create(recipe_id: 2, description: "shredded cheese", quantity: "1", unit: "handful")
+Ingredient.create(recipe_id: 3, description: "steel cut oats", quantity: "0.5", unit: "cup")
+Ingredient.create(recipe_id: 1, description: "milk", quantity: "1", unit: "cup")
+Ingredient.create(recipe_id: 4, description: "tuna", quantity: "1", unit: "can")
+Ingredient.create(recipe_id: 4, description: "mayo", quantity: "1", unit: "tablespoon")
+Ingredient.create(recipe_id: 4, description: "celery", quantity: "1", unit: "stick")
+Ingredient.create(recipe_id: 5, description: "soup", quantity: "1", unit: "can")
+Ingredient.create(recipe_id: 6, description: "lettuce", quantity: "1", unit: "head")
+Ingredient.create(recipe_id: 6, description: "black olives", quantity: "1", unit: "cup")
+Ingredient.create(recipe_id: 6, description: "feta cheese", quantity: "1", unit: "cup")
+Ingredient.create(recipe_id: 6, description: "tomatoes", quantity: "2", unit: "whole")
+Ingredient.create(recipe_id: 7, description: "sliced turkey breast", quantity: "3", unit: "slices")
+Ingredient.create(recipe_id: 7, description: "provolone cheese", quantity: "2", unit: "slices")
+Ingredient.create(recipe_id: 7, description: "lettuce", quantity: "0.25", unit: "head")
+Ingredient.create(recipe_id: 4, description: "whole wheat pita", quantity: "1", unit: "whole")
+Ingredient.create(recipe_id: 8, description: "zucchini", quantity: "3", unit: "whole")
+Ingredient.create(recipe_id: 8, description: "ground beef", quantity: "0.5", unit: "pound")
+Ingredient.create(recipe_id: 4, description: "onion", quantity: "0.5", unit: "whole")
+Ingredient.create(recipe_id: 8, description: "shredded cheese", quantity: "3", unit: "handful")
+Ingredient.create(recipe_id: 9, description: "chicken thighs", quantity: "1", unit: "pound")
+Ingredient.create(recipe_id: 9, description: "kale", quantity: "1", unit: "bunch")
+Ingredient.create(recipe_id: 9, description: "potatoes", quantity: "2", unit: "whole")
+Ingredient.create(recipe_id: 10, description: "spaghetti", quantity: "2", unit: "servings")
+Ingredient.create(recipe_id: 10, description: "spaghetti sauce", quantity: "1", unit: "jar")
+Ingredient.create(recipe_id: 10, description: "spaghetti cheese", quantity: "2", unit: "tablespoons")
+Ingredient.create(recipe_id: 10, description: "meatballs", quantity: "0.5", unit: "pound")
+Ingredient.create(recipe_id: 11, description: "asparagus", quantity: "1", unit: "bunch")
+Ingredient.create(recipe_id: 11, description: "sweet potatoes", quantity: "2", unit: "whole")
+Ingredient.create(recipe_id: 13, description: "red bell pepper", quantity: "2", unit: "whole")
+Ingredient.create(recipe_id: 11, description: "salmon", quantity: "2", unit: "fillets")
+Ingredient.create(recipe_id: 12, description: "BBQ sauce", quantity: "0.5", unit: "bottle")
+Ingredient.create(recipe_id: 2, description: "eggs", quantity: "2", unit: "whole")
+Ingredient.create(recipe_id: 3, description: "bananas", quantity: "1", unit: "whole")
+Ingredient.create(recipe_id: 3, description: "milk", quantity: "1", unit: "cup")
+Ingredient.create(recipe_id: 3, description: "blueberries", quantity: "1", unit: "cup")
+Ingredient.create(recipe_id: 7, description: "whole wheat pita", quantity: "1", unit: "whole")
+Ingredient.create(recipe_id: 8, description: "onion", quantity: "0.5", unit: "whole")
+Ingredient.create(recipe_id: 12, description: "chicken thighs", quantity: "1", unit: "pound")
+Ingredient.create(recipe_id: 12, description: "potatoes", quantity: "2", unit: "whole")
+Ingredient.create(recipe_id: 13, description: "chicken thighs", quantity: "1", unit: "pound")
+Ingredient.create(recipe_id: 13, description: "sweet potatoes", quantity: "2", unit: "whole")
+
+
 Recipe.find(1).ingredients << [
   Ingredient.find(1),
   Ingredient.find(2),
@@ -92,16 +102,16 @@ Recipe.find(1).ingredients << [
 ]
 
 Recipe.find(2).ingredients << [
-  Ingredient.find(4),
+  Ingredient.find(37),
   Ingredient.find(5),
   Ingredient.find(6)
 ]
 
 Recipe.find(3).ingredients << [
-  Ingredient.find(1),
+  Ingredient.find(38),
   Ingredient.find(7),
-  Ingredient.find(8),
-  Ingredient.find(2)
+  Ingredient.find(39),
+  Ingredient.find(40)
 ]
 
 Recipe.find(4).ingredients << [
@@ -127,13 +137,13 @@ Recipe.find(7).ingredients << [
   Ingredient.find(17),
   Ingredient.find(18),
   Ingredient.find(19),
-  Ingredient.find(20)
+  Ingredient.find(41)
 ]
 
 Recipe.find(8).ingredients << [
   Ingredient.find(21),
   Ingredient.find(22),
-  Ingredient.find(23),
+  Ingredient.find(42),
   Ingredient.find(24)
 ]
 
@@ -157,13 +167,13 @@ Recipe.find(11).ingredients << [
 ]
 
 Recipe.find(12).ingredients << [
-  Ingredient.find(25),
+  Ingredient.find(43),
   Ingredient.find(36),
-  Ingredient.find(27)
+  Ingredient.find(44)
 ]
 
 Recipe.find(13).ingredients << [
-  Ingredient.find(25),
+  Ingredient.find(45),
   Ingredient.find(34),
-  Ingredient.find(33)
+  Ingredient.find(46)
 ]
