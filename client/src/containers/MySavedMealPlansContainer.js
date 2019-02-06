@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import Mealdays from '../components/mealdays';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { getMyMealdays } from '../actions/myMealdays'
 
 
 class MySavedMealPlansContainer extends Component {
 
-  constructor() {
-    super()
-    this.state = {}
+  // constructor() {
+  //   super()
+  //   this.state = {}
+  // }
+
+  componentDidMount() {
+    this.props.getMyMealdays()
   }
 
   render() {
@@ -23,14 +28,16 @@ class MySavedMealPlansContainer extends Component {
 
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    state
+    monday: state.mealdays.monday,
+    tuesday: state.mealdays.tuesday,
+    wednesday: state.mealdays.wednesday,
+    thursday: state.mealdays.thursday,
+    friday: state.mealdays.friday,
+    saturday: state.mealdays.saturday,
+    sunday: state.mealdays.sunday
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(MySavedMealPlansContainer)
+export default connect(mapStateToProps, { getMyMealdays })(MySavedMealPlansContainer)
