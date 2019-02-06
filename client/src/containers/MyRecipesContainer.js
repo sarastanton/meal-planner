@@ -10,7 +10,6 @@ class MyRecipesContainer extends Component {
   componentDidMount() {
     // debugger
     this.props.getMyRecipes()
-
   }
 
   render() {

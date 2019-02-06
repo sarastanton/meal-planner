@@ -1,10 +1,10 @@
-export const mealdaysReducer = (state = [], action) => {
+export const mealdaysReducer = (state = {}, action) => {
   switch(action.type) {
 
     case "FETCH_USER_MEALDAYS":
       return {
         ...state,
-        mealdays: action.mealdays
+        mealdays: action.mealdays,
       };
 
     // case "SEND_MEALDAY_SELECTION":
@@ -16,7 +16,6 @@ export const mealdaysReducer = (state = [], action) => {
     // return {
     //   ...state, updatedMealday: action.mealday
     // }
-
     default:
       return state;
 

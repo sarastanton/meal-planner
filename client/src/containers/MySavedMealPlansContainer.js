@@ -30,13 +30,14 @@ class MySavedMealPlansContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    monday: state.mealdays.monday,
-    tuesday: state.mealdays.tuesday,
-    wednesday: state.mealdays.wednesday,
-    thursday: state.mealdays.thursday,
-    friday: state.mealdays.friday,
-    saturday: state.mealdays.saturday,
-    sunday: state.mealdays.sunday
+    // monday: state.mealdays.monday,
+    // tuesday: state.mealdays.tuesday,
+    // wednesday: state.mealdays.wednesday,
+    // thursday: state.mealdays.thursday,
+    // friday: state.mealdays.friday,
+    // saturday: state.mealdays.saturday,
+    // sunday: state.mealdays.sunday
+    mealdays: state.mealdays
   }
 }
 
