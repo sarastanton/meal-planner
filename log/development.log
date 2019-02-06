@@ -25102,3 +25102,143 @@ SystemExit (exit):
 (byebug):1:in `exit'
 (byebug):1:in `create'
 app/controllers/recipes_controller.rb:9:in `create'
+Started GET "/recipes" for 127.0.0.1 at 2019-02-05 19:42:55 -0600
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/sara/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by RecipesController#index as */*
+  [1m[36mRecipe Load (169.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (1.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 3]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 5]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 6]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 7]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 8]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 9]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 10]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 11]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 12]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 13]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (72.05ms)
+Completed 200 OK in 299ms (Views: 89.2ms | ActiveRecord: 202.0ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2019-02-05 19:44:20 -0600
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Test Recipe", "directions"=>"Example Description", "ingredients_attributes"=>[[{"quantity"=>"1", "unit"=>"Unit1", "description"=>"Desc1"}, {"quantity"=>"2", "unit"=>"Unit2", "description"=>"Desc2"}]]}}
+Completed 500 Internal Server Error in 101477ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/recipes_controller.rb:9:in `create'
+Started GET "/recipes" for 127.0.0.1 at 2019-02-05 19:46:10 -0600
+Processing by RecipesController#index as */*
+  [1m[36mRecipe Load (2.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (2.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 3]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 5]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (2.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 6]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 7]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (1.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 8]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 9]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 10]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (1.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 11]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 12]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 13]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (888.49ms)
+Completed 200 OK in 1228ms (Views: 967.5ms | ActiveRecord: 32.0ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2019-02-05 19:46:29 -0600
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Test Recipe", "directions"=>"Example Directions", "ingredients_attributes"=>[[{"quantity"=>"1", "unit"=>"Unit1", "description"=>"Desc1"}, {"quantity"=>"2", "unit"=>"Unit2", "description"=>"Desc2"}]]}}
+Completed 500 Internal Server Error in 141409ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/recipes_controller.rb:9:in `create'
+Started GET "/recipes" for 127.0.0.1 at 2019-02-05 19:50:00 -0600
+Processing by RecipesController#index as */*
+  [1m[36mRecipe Load (2.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (1.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (1.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (1.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 3]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (1.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 4]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (1.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 5]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 6]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (1.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 7]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (2.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 8]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (2.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 9]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 10]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 11]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 12]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers]   [1m[36mIngredient Load (1.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 13]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:17
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1091.79ms)
+Completed 200 OK in 1469ms (Views: 1188.9ms | ActiveRecord: 36.9ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2019-02-05 19:50:08 -0600
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Test Recipe", "directions"=>"asdfasdf", "ingredients_attributes"=>[[{"quantity"=>"1", "unit"=>"sdfasdf", "description"=>"asdfasdf"}]]}}
+Completed 500 Internal Server Error in 60042ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/recipes_controller.rb:9:in `create'
