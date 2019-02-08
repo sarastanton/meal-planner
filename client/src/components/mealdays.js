@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Mealdays = (props) => {
+const Mealdays = props => {
+  console.log(props.mealdays)
   debugger
   return (
     <div className="card">
@@ -50,8 +51,9 @@ const Mealdays = (props) => {
         </tr>
       </table>
 
-{      /* <p>this is props: {props.mealdays.monday.name}</p> */
-}    </div>
+    <p>this is props: {}</p>
+
+    </div>
   )
 
 }

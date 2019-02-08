@@ -16,7 +16,7 @@ class MySavedMealPlansContainer extends Component {
   }
 
   render() {
-    debugger
+    // debugger
     return(
       <React.Fragment>
         <div className="container">
@@ -38,7 +38,7 @@ const mapStateToProps = (state) => {
     // friday: state.mealdays.friday,
     // saturday: state.mealdays.saturday,
     // sunday: state.mealdays.sunday
-    mealdays: state.mealdays
+    mealdays: state.mealdays.mealdays
   }
 }
 
