@@ -37,12 +37,16 @@ class RecipeForm extends Component {
     ++this.ingredientCounter;
     this.ingredientFormArray.push(this.ingredientCounter);
     this.forceUpdate()
+
   }
 
   handleOnSubmit = event => {
     event.preventDefault();
     this.setState({
-      ingredients_attributes: [ ...this.state.ingredients_attributes, this.createIngredientsArray() ]
+      ingredients_attributes: [
+        ...this.state.ingredients_attributes,
+        ...this.createIngredientsArray()
+      ]
     }, () => this.props.createNewDBRecipe(this.state));
   }
 

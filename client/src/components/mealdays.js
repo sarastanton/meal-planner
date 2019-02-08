@@ -2,7 +2,7 @@ import React from 'react'
 
 const Mealdays = props => {
   console.log(props.mealdays)
-  debugger
+  // debugger
   return (
     <div className="card">
       <table>
