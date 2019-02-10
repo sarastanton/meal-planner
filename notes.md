@@ -1,32 +1,9 @@
-RAILS
+* Ingredient shopping list from recipe checklist
 
-INGREDIENTS
-- have a quantity, a unit, and a description
-- has_many recipes
+* User signup/signin (and update controllers to only show data saved by that use)
 
-- add a method that reduces down into totals by unit
+* React routes
 
-RECIPES
-- has_many ingredients
-- have a name
-- have a directions attribute
-- has_many mealdays
+* Model validations (ingredient quantity should be an integer or decimal, etc)
 
-MEALDAYS
-- have a week_day
-- have a meal_name
-- belongs_to a recipe
-
-
-* set up model validations
-
-REACT
-
-* set up user accounts/login
-* set up form for new recipe
-* set up routes
-
-
-
-REDUX
-* figure out what needs state and when
+* Styling

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import IngredientForm from './ingredientForm';
 import { connect } from 'react-redux';
 import { createNewDBRecipe } from '../../actions/myRecipes'
+import { receiveRecipeFormData } from '../../actions/myRecipes'
+import { clearRecipeForm } from '../../actions/myRecipes'
 
 class RecipeForm extends Component {
 
@@ -9,11 +11,12 @@ class RecipeForm extends Component {
     super()
     this.ingredientCounter = 1;
     this.ingredientFormArray = [1];
-    this.state = {
-      name: '',
-      directions: '',
-      ingredients_attributes: []
-    };
+
+    // this.state = {
+    //   name: '',
+    //   directions: '',
+    //   ingredients_attributes: []
+    // };
   }
 
   createIngredientsArray = () => {
@@ -42,17 +45,21 @@ class RecipeForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.setState({
-      ingredients_attributes: [
-        ...this.state.ingredients_attributes,
-        ...this.createIngredientsArray()
-      ]
-    }, () => this.props.createNewDBRecipe(this.state));
-  }
+    const formData = {
+      name: this.props.name,
+      directions: this.props.directions,
+      ingredients_array: this.createIngredientsArray()
+    };
+    this.props.createNewDBRecipe(formData);
+    this.props.clearRecipeForm();
+    this.forceUpdate()
+  };
+
 
   handleOnChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
+    this.props.receiveRecipeFormData({
+      name: document.getElementById("recipe-name").value,
+      directions: document.getElementById("recipe-directions").value
     })
   }
 
@@ -64,11 +71,11 @@ class RecipeForm extends Component {
         <form id="recipe-form" onSubmit={this.handleOnSubmit}>
           <p>
             <label htmlFor="name"><strong>Recipe Name: </strong></label>
-            <input type="text" name="name" value={this.state.name} onChange={this.handleOnChange}/>
+            <input id="recipe-name" type="text" name="name" value={this.props.name} onChange={this.handleOnChange}/>
           </p>
           <p>
             <label htmlFor="directions"><strong>Directions:</strong> </label>
-            <textarea name="directions" onChange={this.handleOnChange}/>
+            <textarea id="recipe-directions" name="directions" value={this.props.directions} onChange={this.handleOnChange}/>
           </p>
           <br/>
           {this.ingredientFormArray.map(i => <IngredientForm count={i} createRecipeObj={this.createRecipeObj}/>)}
@@ -83,4 +90,12 @@ class RecipeForm extends Component {
 
 }
 
-export default connect(null, { createNewDBRecipe })(RecipeForm)
+const mapStateToProps = (state) => {
+  return ({
+    name: state.recipes.recipeFormData.name,
+    directions: state.recipes.recipeFormData.directions
+  })
+}
+
+
+export default connect(mapStateToProps, { createNewDBRecipe, receiveRecipeFormData, clearRecipeForm })(RecipeForm)

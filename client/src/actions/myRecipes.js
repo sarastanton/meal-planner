@@ -39,3 +39,23 @@ export const createNewDBRecipe = recipeData => {
     .catch(error => console.log(error))
   }
 }
+
+export const receiveRecipeFormData = recipeFormData => {
+  return {
+    type: "RECEIVE_FORM_DATA",
+    recipeFormData: recipeFormData
+  }
+}
+
+// export const receiveIngredientArray = ingredientArray => {
+//   return {
+//     type: "RECEIVE_INGREDIENTS",
+//     ingredients: ingredientArray
+//   }
+// }
+
+export const clearRecipeForm = () => {
+  return {
+    type: "CLEAR_RECIPE_FORM"
+  }
+}
