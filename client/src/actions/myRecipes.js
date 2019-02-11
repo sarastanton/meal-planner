@@ -28,7 +28,6 @@ export const createNewDBRecipe = recipeData => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({ recipe: recipeData })
-    // }).then(console.log(recipeData))
     }).then(response => response.json())
     .then(recipe => {
       dispatch({

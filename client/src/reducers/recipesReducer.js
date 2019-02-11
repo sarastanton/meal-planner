@@ -27,12 +27,13 @@ export const recipesReducer = (state = initialRecipeState, action) => {
     case "CREATE_DB_RECIPE":
     return {
       ...state,
-      newRecipe: action.recipe
+      recipes: [...state.recipes, action.recipe]
     };
 
     case "CLEAR_RECIPE_FORM":
       return {
-        initialRecipeState: []
+        ...state,
+        recipeFormData: initialRecipeState.recipeFormData
       }
 
     case "RECEIVE_FORM_DATA":

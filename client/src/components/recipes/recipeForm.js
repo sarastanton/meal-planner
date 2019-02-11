@@ -11,12 +11,6 @@ class RecipeForm extends Component {
     super()
     this.ingredientCounter = 1;
     this.ingredientFormArray = [1];
-
-    // this.state = {
-    //   name: '',
-    //   directions: '',
-    //   ingredients_attributes: []
-    // };
   }
 
   createIngredientsArray = () => {
@@ -48,7 +42,7 @@ class RecipeForm extends Component {
     const formData = {
       name: this.props.name,
       directions: this.props.directions,
-      ingredients_array: this.createIngredientsArray()
+      ingredients_attributes: this.createIngredientsArray()
     };
     this.props.createNewDBRecipe(formData);
     this.props.clearRecipeForm();
@@ -65,7 +59,7 @@ class RecipeForm extends Component {
 
 
   render() {
-    // debugger
+    debugger
     return (
       <div className="card card-holder">
         <form id="recipe-form" onSubmit={this.handleOnSubmit}>
