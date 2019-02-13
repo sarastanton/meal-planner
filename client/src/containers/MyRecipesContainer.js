@@ -21,7 +21,7 @@ class MyRecipesContainer extends Component {
             My Saved Recipes:
             {this.props.recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />) }
           </div>
-            <RecipeSpotlight />
+            <RecipeSpotlight allRecipes={this.props.recipes} />
             <RecipeForm />
           </div>
       </React.Fragment>
@@ -32,6 +32,7 @@ class MyRecipesContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     recipes: state.recipes.recipes,
+    mealdays: state.mealdays.mealdays
   }
 }
 

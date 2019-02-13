@@ -34,6 +34,9 @@ export const createNewDBRecipe = recipeData => {
         type: "CREATE_DB_RECIPE",
         recipe
       })
+      dispatch({
+        type: "CLEAR_RECIPE_FORM"
+      })
     })
     .catch(error => console.log(error))
   }
@@ -53,8 +56,10 @@ export const receiveRecipeFormData = recipeFormData => {
 //   }
 // }
 
-export const clearRecipeForm = () => {
-  return {
-    type: "CLEAR_RECIPE_FORM"
-  }
-}
+// export const clearRecipeForm = () => {
+//   debugger
+//   console.log("clear Recipe Form ran")
+//   return {
+//     type: "CLEAR_RECIPE_FORM"
+//   }
+// }

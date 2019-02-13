@@ -3,7 +3,7 @@ import IngredientForm from './ingredientForm';
 import { connect } from 'react-redux';
 import { createNewDBRecipe } from '../../actions/myRecipes'
 import { receiveRecipeFormData } from '../../actions/myRecipes'
-import { clearRecipeForm } from '../../actions/myRecipes'
+// import { clearRecipeForm } from '../../actions/myRecipes'
 
 class RecipeForm extends Component {
 
@@ -40,12 +40,11 @@ class RecipeForm extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     const formData = {
-      name: this.props.name,
-      directions: this.props.directions,
+      name: this.props.recipeFormData.name,
+      directions: this.props.recipeFormData.directions,
       ingredients_attributes: this.createIngredientsArray()
     };
     this.props.createNewDBRecipe(formData);
-    this.props.clearRecipeForm();
     this.forceUpdate()
   };
 
@@ -59,17 +58,17 @@ class RecipeForm extends Component {
 
 
   render() {
-    debugger
+    // debugger
     return (
       <div className="card card-holder">
         <form id="recipe-form" onSubmit={this.handleOnSubmit}>
           <p>
             <label htmlFor="name"><strong>Recipe Name: </strong></label>
-            <input id="recipe-name" type="text" name="name" value={this.props.name} onChange={this.handleOnChange}/>
+            <input id="recipe-name" type="text" name="name" value={this.props.recipeFormData.name} onChange={this.handleOnChange}/>
           </p>
           <p>
             <label htmlFor="directions"><strong>Directions:</strong> </label>
-            <textarea id="recipe-directions" name="directions" value={this.props.directions} onChange={this.handleOnChange}/>
+            <textarea id="recipe-directions" name="directions" value={this.props.recipeFormData.directions} onChange={this.handleOnChange}/>
           </p>
           <br/>
           {this.ingredientFormArray.map(i => <IngredientForm count={i} createRecipeObj={this.createRecipeObj}/>)}
@@ -86,10 +85,9 @@ class RecipeForm extends Component {
 
 const mapStateToProps = (state) => {
   return ({
-    name: state.recipes.recipeFormData.name,
-    directions: state.recipes.recipeFormData.directions
+    recipeFormData: state.recipes.recipeFormData
   })
 }
 
 
-export default connect(mapStateToProps, { createNewDBRecipe, receiveRecipeFormData, clearRecipeForm })(RecipeForm)
+export default connect(mapStateToProps, { createNewDBRecipe, receiveRecipeFormData })(RecipeForm)

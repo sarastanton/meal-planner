@@ -6,17 +6,11 @@ import { getMyMealdays } from '../actions/myMealdays'
 
 class MySavedMealPlansContainer extends Component {
 
-  // constructor() {
-  //   super()
-  //   this.state = {}
-  // }
-
   componentDidMount() {
-    this.props.getMyMealdays()
+    this.props.getMyMealdays();
   }
 
   render() {
-    // debugger
     return(
       <React.Fragment>
         <div className="container">
@@ -26,6 +20,26 @@ class MySavedMealPlansContainer extends Component {
       </React.Fragment>
     )
   }
+
+  // createDaysArray = () => {
+  //   let array = [];
+  //   Object.keys(this.props.mealdays).forEach(day => array.push(day));
+  //   array.forEach(day => this.loadDaysAndMeals(day))
+  // }
+  //
+  // loadDaysAndMeals = (day) => {
+  //   const week = [];
+  //   week.push(Object.assign({
+  //     day: [
+  //       {breakfast: this.props.mealdays.mealdays.filter(m => m.week_day === day)[0].recipe.name },
+  //       {lunch: this.props.mealdays.mealdays.filter(m => m.week_day === day)[1].recipe.name},
+  //       {dinner: this.props.mealdays.mealdays.filter(m => m.week_day === day)[2].recipe.name}
+  //     ]
+  //   }));
+  //   debugger
+  //   return week
+  // }
+
 
 }
 
@@ -37,7 +51,7 @@ const mapStateToProps = (state) => {
     // thursday: state.mealdays.thursday,
     // friday: state.mealdays.friday,
     // saturday: state.mealdays.saturday,
-    // sunday: state.mealdays.sunday
+    // sunday: state.mealdays.sunday,
     mealdays: state.mealdays.mealdays
   }
 }

@@ -3,9 +3,8 @@ export const mealdaysReducer = (state = {}, action) => {
 
     case "FETCH_USER_MEALDAYS":
       return {
-        ...state,
         mealdays: action.mealdays,
-      };
+      }
 
     // case "SEND_MEALDAY_SELECTION":
     //   return {
@@ -21,3 +20,17 @@ export const mealdaysReducer = (state = {}, action) => {
 
   }
 }
+
+
+// return {
+//   ...state,
+//   mealdays: [
+//     {Monday: action.mealdays.filter(m => m.week_day === "Monday")},
+//     {Tuesday: action.mealdays.filter(m => m.week_day === "Tuesday")},
+//     {Wednesday: action.mealdays.filter(m => m.week_day === "Wednesday")},
+//     {Thursday: action.mealdays.filter(m => m.week_day === "Thursday")},
+//     {Friday: action.mealdays.filter(m => m.week_day === "Friday")},
+//     {Saturday: action.mealdays.filter(m => m.week_day === "Saturday")},
+//     {Sunday: action.mealdays.filter(m => m.week_day === "Sunday")},
+//   ]
+// }
