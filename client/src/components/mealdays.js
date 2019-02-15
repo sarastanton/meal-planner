@@ -33,42 +33,39 @@ const Mealdays = props => {
       }
             <tbody>
               <tr className="breakfast">
-                <td> Breakfast </td>
+                <td> <strong> Breakfast </strong> </td>
                 <td> {props.mealdays[0].recipe.name} </td>
-                <td> Tuesday Breakfast </td>
-                <td> Wednesday Breakfast </td>
-                <td> Thursday Breakfast </td>
-                <td> Friday Breakfast </td>
-                <td> Saturday Breakfast </td>
-                <td> Sunday Breakfast </td>
+                <td> {props.mealdays[3].recipe.name} </td>
+                <td> {props.mealdays[6].recipe.name} </td>
+                <td> {props.mealdays[9].recipe.name} </td>
+                <td> {props.mealdays[12].recipe.name} </td>
+                <td> {props.mealdays[15].recipe.name} </td>
+                <td> {props.mealdays[18].recipe.name} </td>
               </tr>
 
               <tr className="lunch">
-                <td> Lunch </td>
-                <td> Monday Lunch </td>
-                <td> Tuesday Lunch </td>
-                <td> Wednesday Lunch </td>
-                <td> Thursday Lunch </td>
-                <td> Friday Lunch </td>
-                <td> Saturday Lunch </td>
-                <td> Sunday Lunch </td>
+                <td> <strong> Lunch </strong> </td>
+                <td> {props.mealdays[1].recipe.name} </td>
+                <td> {props.mealdays[4].recipe.name} </td>
+                <td> {props.mealdays[7].recipe.name} </td>
+                <td> {props.mealdays[10].recipe.name} </td>
+                <td> {props.mealdays[13].recipe.name} </td>
+                <td> {props.mealdays[16].recipe.name} </td>
+                <td> {props.mealdays[19].recipe.name} </td>
               </tr>
 
               <tr className="dinner">
-                <td> Dinner </td>
-                <td> Monday Dinner </td>
-                <td> Tuesday Dinner </td>
-                <td> Wednesday Dinner </td>
-                <td> Thursday Dinner </td>
-                <td> Friday Dinner </td>
-                <td> Saturday Dinner </td>
-                <td> Sunday Dinner </td>
+                <td> <strong> Dinner </strong> </td>
+                <td> {props.mealdays[2].recipe.name} </td>
+                <td> {props.mealdays[5].recipe.name} </td>
+                <td> {props.mealdays[8].recipe.name} </td>
+                <td> {props.mealdays[11].recipe.name} </td>
+                <td> {props.mealdays[14].recipe.name} </td>
+                <td> {props.mealdays[17].recipe.name} </td>
+                <td> {props.mealdays[20].recipe.name} </td>
               </tr>
             </tbody>
           </table>
-
-        <p>this is props:
-    {Object.keys(props.mealdays)}</p>
 
         </div>
       )

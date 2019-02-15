@@ -50,7 +50,13 @@ input, textarea  {
   float: right;
 }
 
+td {
+  height: 150px;
+}
 
+table {
+  text-align: left;
+}
 
 
 /* Chalkboard frame idea */

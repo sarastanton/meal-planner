@@ -14,9 +14,19 @@ class RecipeSpotlight extends Component {
             <p><strong> Directions: </strong></p> {this.props.recipeSelection.directions}
             <br />
             <p><strong> Ingredients: </strong></p>
-            <ul>
-              {this.props.recipeSelection.ingredients.map(ingredient => <li> {ingredient.quantity} {ingredient.unit} {ingredient.description} </li>)}
-            </ul>
+            <table>
+              <tbody>
+                <td>
+                    {this.props.recipeSelection.ingredients.map(ingredient =>
+                      <tr>
+                        <h4>
+                          {ingredient.quantity} {ingredient.unit} {ingredient.description}
+                        </h4>
+                      </tr>)}
+                </td>
+              </tbody>
+            </table>
+            <br />
             ADD EDIT/DELETE BUTTONS
           </React.Fragment>
         </div>
