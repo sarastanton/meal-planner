@@ -40,6 +40,11 @@
   flex-basis: auto
 }
 
+.shopping {
+  display: flex;
+  flex: 1;
+}
+
 
 form {
   text-align: left;

@@ -20,7 +20,7 @@ class RecipeSpotlight extends Component {
                     {this.props.recipeSelection.ingredients.map(ingredient =>
                       <tr>
                         <h4>
-                          {ingredient.quantity} {ingredient.unit} {ingredient.description}
+                          {this.props.listType(ingredient)}
                         </h4>
                       </tr>)}
                 </td>
@@ -34,7 +34,7 @@ class RecipeSpotlight extends Component {
     } else {
       return (
         <div className="card">
-          Select a recipe at left to see its details:
+          Select a recipe {this.props.recipeDirection} to see its details:
         </div>
       )
     }

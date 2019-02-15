@@ -8,6 +8,8 @@ import { getMyMealdays } from '../actions/myMealdays'
 
 class MySavedMealPlansContainer extends Component {
 
+
+
   componentDidMount() {
     this.props.getMyMealdays();
   }
@@ -18,14 +20,19 @@ class MySavedMealPlansContainer extends Component {
         <div className="container">
           This is the MySavedMealPlans Container component.
         <Mealdays mealdays={this.props.mealdays} />
-        <div>
-          <RecipeSpotlight />
+        <div className="shopping">
+          <RecipeSpotlight recipeDirection={"above"} listType={this.checkboxList} />
           <ShoppingListItem />
         </div>
         </div>
       </React.Fragment>
     )
   }
+
+  checkboxList(ingredient) {
+    return '<input type="checkbox" id=' + `${ingredient.id}` + "/>" + `${ingredient.quantity} ${ingredient.unit} ${ingredient.description}`
+  }
+
 
 }
 
