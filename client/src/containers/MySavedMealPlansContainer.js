@@ -30,7 +30,7 @@ class MySavedMealPlansContainer extends Component {
   }
 
   checkboxList(ingredient) {
-    return '<input type="checkbox" id=' + `${ingredient.id}` + "/>" + `${ingredient.quantity} ${ingredient.unit} ${ingredient.description}`
+    return {__html: '<input type="checkbox" id=' + `${ingredient.id}` + "/>" + `${ingredient.quantity} ${ingredient.unit} ${ingredient.description}`}
   }
 
 

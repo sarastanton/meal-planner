@@ -29,7 +29,7 @@ class MyRecipesContainer extends Component {
   }
 
   plainList(ingredient) {
-    return `${ingredient.quantity} ${ingredient.unit} ${ingredient.description}`
+    return {__html: `${ingredient.quantity} ${ingredient.unit} ${ingredient.description}`}
   }
 
 }

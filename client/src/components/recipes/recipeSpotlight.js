@@ -20,7 +20,7 @@ class RecipeSpotlight extends Component {
                     {this.props.recipeSelection.ingredients.map(ingredient =>
                       <tr>
                         <h4>
-                          {this.props.listType(ingredient)}
+                          {this.renderIngredientList(ingredient)}
                         </h4>
                       </tr>)}
                 </td>
@@ -38,6 +38,10 @@ class RecipeSpotlight extends Component {
         </div>
       )
     }
+  }
+
+  renderIngredientList = (ingredient) => {
+    return <div dangerouslySetInnerHTML={this.props.listType(ingredient)} />
   }
 
 }
