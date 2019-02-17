@@ -14,7 +14,7 @@ class RecipeSpotlight extends Component {
             <p><strong> Directions: </strong></p> {this.props.recipeSelection.directions}
             <br />
             <p><strong> Ingredients: </strong></p>
-            <table>
+            <table className="ing-list">
               <tbody>
                 <td>
                     {this.props.recipeSelection.ingredients.map(ingredient =>

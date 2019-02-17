@@ -1,11 +1,11 @@
 export const ingredientsReducer = (state = [], action) => {
   switch(action.type) {
 
-    case "1":
-      return action;
-
-    case "2":
-      return action;
+    case "ADD_TO_SHOPPING_LIST":
+      return {
+        ...state,
+        shoppingList: [...state.shoppingList, action.item]
+      };
 
     default:
       return state;

@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import ShoppingListItem from '../components/shoppingListItem';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { addToShoppingList } from '../actions/shoppingList'
 
 class ShoppingListContainer extends Component {
-
-  constructor() {
-    super()
-    this.state = {}
-  }
 
   render() {
     return(
@@ -20,17 +16,17 @@ class ShoppingListContainer extends Component {
     )
   }
 
+  totalItems = () => {
+
+  }
+
 
 }
 
 const mapStateToProps = state => {
   return {
-    state
+    shoppingList: state.ingredients.shoppingList
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(ShoppingListContainer)
+export default connect(mapStateToProps, { addToShoppingList })(ShoppingListContainer)

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Mealdays from '../components/mealdays';
 import RecipeSpotlight from '../components/recipes/recipeSpotlight';
-import ShoppingListItem from '../components/shoppingListItem'
+import ShoppingListContainer from './ShoppingListContainer'
 import { connect } from 'react-redux';
 import { getMyMealdays } from '../actions/myMealdays'
 
@@ -22,7 +22,7 @@ class MySavedMealPlansContainer extends Component {
         <Mealdays mealdays={this.props.mealdays} />
         <div className="shopping">
           <RecipeSpotlight recipeDirection={"above"} listType={this.checkboxList} />
-          <ShoppingListItem />
+          <ShoppingListContainer />
         </div>
         </div>
       </React.Fragment>
