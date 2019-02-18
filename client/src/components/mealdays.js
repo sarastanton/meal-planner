@@ -6,7 +6,7 @@ const Mealdays = props => {
   if (props.mealdays === undefined) {
     console.log("not loaded yet")
   } else {
-    console.log(props.mealdays[0].week_day)
+    console.log(props.mealdays)
   }
 
   // debugger
@@ -25,8 +25,7 @@ const Mealdays = props => {
                 <th> Dinner </th>
               </tr>
             </thead>
-      {/*  document.getElementsByClassName("breakfast")[0].children[0].parentElement.className */
-      }
+  
             <tbody>
               <tr className="mon">
                 <td> <strong> Monday </strong> </td>

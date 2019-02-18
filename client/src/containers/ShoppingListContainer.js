@@ -5,11 +5,19 @@ import { addToShoppingList } from '../actions/shoppingList'
 
 class ShoppingListContainer extends Component {
 
+
   render() {
+    const arr = ["a", "b", "c"]
     return(
       <React.Fragment>
         <div className="container">
           This is the ShoppingListContainer Container component.
+          <select>
+            {arr.map(a =>
+
+            <option> {a} </option>
+          )}
+          </select>
           <ShoppingListItem />
         </div>
       </React.Fragment>

@@ -13,12 +13,12 @@ export const getMyMealdays = () => {
   }
 }
 
-// export const sendMealdaySelection = selection => {
-//   return {
-//     type: "SEND_MEALDAY_SELECTION",
-//     selection
-//   }
-// }
+export const sendMealdaySelection = selection => {
+  return {
+    type: "SEND_MEALDAY_SELECTION",
+    selection
+  }
+}
 
 // export const editMealday = mealdayData => {
 //   return dispatch => {

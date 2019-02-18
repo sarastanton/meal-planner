@@ -4,20 +4,23 @@ import { connect } from 'react-redux';
 
 class RecipeSpotlight extends Component {
 
+  handleOnChange = (event) => {
+    console.log(event.target)
+  }
+
   render() {
-    // debugger
-    if (Object.entries(this.props.recipeSelection).length !== 0) {
+    if (!!this.props.selection && Object.entries(this.props.selection).length !== 0) {
       return (
-        <div className="card" key={this.props.recipeSelection.id}>
+        <div className="card" key={this.props.selection.id}>
           <React.Fragment>
-            <h3>{this.props.recipeSelection.name}</h3>
-            <p><strong> Directions: </strong></p> {this.props.recipeSelection.directions}
+            <h3>{this.props.selection.name}</h3>
+            <p><strong> Directions: </strong></p> {this.props.selection.directions}
             <br />
             <p><strong> Ingredients: </strong></p>
             <table className="ing-list">
               <tbody>
                 <td>
-                    {this.props.recipeSelection.ingredients.map(ingredient =>
+                    {this.props.selection.ingredients.map(ingredient =>
                       <tr>
                         <h4>
                           {this.renderIngredientList(ingredient)}
@@ -44,12 +47,12 @@ class RecipeSpotlight extends Component {
     return <div dangerouslySetInnerHTML={this.props.listType(ingredient)} />
   }
 
-}
 
-const mapStateToProps = (state) => {
-  return {
-    recipeSelection: state.recipes.recipeSelection,
+  handleOnChange = (event) => {
+    console.log(event.target)
   }
+
+
 }
 
-export default connect(mapStateToProps)(RecipeSpotlight)
+export default RecipeSpotlight

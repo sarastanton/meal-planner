@@ -8,11 +8,14 @@ import { getMyMealdays } from '../actions/myMealdays'
 
 class MySavedMealPlansContainer extends Component {
 
-
-
   componentDidMount() {
     this.props.getMyMealdays();
   }
+
+  handleOnChange = (event) => {
+    console.log(event.target)
+  }
+
 
   render() {
     return(
@@ -21,7 +24,7 @@ class MySavedMealPlansContainer extends Component {
           This is the MySavedMealPlans Container component.
         <Mealdays mealdays={this.props.mealdays} />
         <div className="shopping">
-          <RecipeSpotlight recipeDirection={"above"} listType={this.checkboxList} />
+          <RecipeSpotlight recipeDirection={"above"} changeHandler={this.handleOnChange} listType={this.checkboxList} selection={this.props.mealSelection} />
           <ShoppingListContainer />
         </div>
         </div>
@@ -30,22 +33,17 @@ class MySavedMealPlansContainer extends Component {
   }
 
   checkboxList(ingredient) {
-    return {__html: '<input type="checkbox" id=' + `${ingredient.id}` + "/>" + `${ingredient.quantity} ${ingredient.unit} ${ingredient.description}`}
+    return {__html: `<input type="checkbox" onChange=${(e) => this.handleOnChange(e)} id=${ingredient.id} /> ${ingredient.quantity} ${ingredient.unit} ${ingredient.description}`}
   }
+
 
 
 }
 
 const mapStateToProps = (state) => {
   return {
-    // monday: state.mealdays.monday,
-    // tuesday: state.mealdays.tuesday,
-    // wednesday: state.mealdays.wednesday,
-    // thursday: state.mealdays.thursday,
-    // friday: state.mealdays.friday,
-    // saturday: state.mealdays.saturday,
-    // sunday: state.mealdays.sunday,
-    mealdays: state.mealdays.mealdays
+    mealdays: state.mealdays.mealdays,
+    mealSelection: state.mealdays.mealSelection
   }
 }
 
