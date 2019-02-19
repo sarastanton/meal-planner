@@ -1,88 +1,54 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Mealdays = props => {
-  // console.log(props.mealdays)
+export default class Mealdays extends Component {
+  // console.log(this.props.mealdays)
 
-  if (props.mealdays === undefined) {
-    console.log("not loaded yet")
-  } else {
-    console.log(props.mealdays)
+  handleOnClick(event) {
+    console.log(event.target.dataset.id)
   }
 
+  render() {
   // debugger
-  if(props.mealdays === undefined) {
-    return null
-  } else {
-
-      return (
-        <div className="card">
-          <table className="meals">
-            <thead>
-              <tr>
-                <th> </th>
-                <th> Breakfast </th>
-                <th> Lunch </th>
-                <th> Dinner </th>
-              </tr>
-            </thead>
-  
-            <tbody>
-              <tr className="mon">
-                <td> <strong> Monday </strong> </td>
-                <td> {props.mealdays[0].recipe.name} </td>
-                <td> {props.mealdays[1].recipe.name} </td>
-                <td> {props.mealdays[2].recipe.name} </td>
-              </tr>
-
-              <tr className="tues">
-                <td> <strong> Tuesday </strong> </td>
-                <td> {props.mealdays[3].recipe.name} </td>
-                <td> {props.mealdays[4].recipe.name} </td>
-                <td> {props.mealdays[5].recipe.name} </td>
-              </tr>
-
-              <tr className="wed">
-                <td> <strong> Wednesday </strong> </td>
-                <td> {props.mealdays[6].recipe.name} </td>
-                <td> {props.mealdays[7].recipe.name} </td>
-                <td> {props.mealdays[8].recipe.name} </td>
-              </tr>
-
-              <tr className="thurs">
-                <td> <strong> Thursday </strong> </td>
-                <td> {props.mealdays[9].recipe.name} </td>
-                <td> {props.mealdays[10].recipe.name} </td>
-                <td> {props.mealdays[11].recipe.name} </td>
-              </tr>
-
-              <tr className="fri">
-                <td> <strong> Friday </strong> </td>
-                <td> {props.mealdays[12].recipe.name} </td>
-                <td> {props.mealdays[13].recipe.name} </td>
-                <td> {props.mealdays[14].recipe.name} </td>
-              </tr>
-
-              <tr className="sat">
-                <td> <strong> Saturday </strong> </td>
-                <td> {props.mealdays[15].recipe.name} </td>
-                <td> {props.mealdays[16].recipe.name} </td>
-                <td> {props.mealdays[17].recipe.name} </td>
-              </tr>
-
-              <tr className="sun">
-                <td> <strong> Sunday </strong> </td>
-                <td> {props.mealdays[18].recipe.name} </td>
-                <td> {props.mealdays[19].recipe.name} </td>
-                <td> {props.mealdays[20].recipe.name} </td>
-              </tr>
-
-            </tbody>
-          </table>
-
-        </div>
-      )
+    if (this.props.mealday === undefined) {
+      console.log("not loaded yet")
+    } else {
+      console.log([
+        "Monday",
+        this.props.mealday[0],
+        this.props.mealday[1],
+        this.props.mealday[2]
+      ])
     }
-}
 
+    if(this.props.mealday === undefined) {
+      return null
+    } else {
+      // debugger
+        return (
+          <div className="card">
+            <table className="meals" onClick={this.handleOnClick}>
+              <thead>
+                <tr>
+                  <th> </th>
+                  <th> Breakfast </th>
+                  <th> Lunch </th>
+                  <th> Dinner </th>
+                </tr>
+              </thead>
 
-export default Mealdays
+              <tbody>
+                <tr className={this.props.mealday[0].toLowerCase().slice(0,3)}>
+                  <td className="day-header"> <strong> {this.props.mealday[0]} </strong> </td>
+                  <td data-id={this.props.mealday[1].recipe.id}> {this.props.mealday[1].recipe.name} </td>
+                  <td data-id={this.props.mealday[2].recipe.id}> {this.props.mealday[2].recipe.name} </td>
+                  <td data-id={this.props.mealday[3].recipe.id}> {this.props.mealday[3].recipe.name} </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        )
+      }
+    }
+
+  }
