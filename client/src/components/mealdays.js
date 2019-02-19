@@ -9,18 +9,7 @@ export default class Mealdays extends Component {
 
   render() {
   // debugger
-    if (this.props.mealday === undefined) {
-      console.log("not loaded yet")
-    } else {
-      console.log([
-        "Monday",
-        this.props.mealday[0],
-        this.props.mealday[1],
-        this.props.mealday[2]
-      ])
-    }
-
-    if(this.props.mealday === undefined) {
+    if(this.props.mealdays === undefined) {
       return null
     } else {
       // debugger
@@ -37,12 +26,14 @@ export default class Mealdays extends Component {
               </thead>
 
               <tbody>
-                <tr className={this.props.mealday[0].toLowerCase().slice(0,3)}>
-                  <td className="day-header"> <strong> {this.props.mealday[0]} </strong> </td>
-                  <td data-id={this.props.mealday[1].recipe.id}> {this.props.mealday[1].recipe.name} </td>
-                  <td data-id={this.props.mealday[2].recipe.id}> {this.props.mealday[2].recipe.name} </td>
-                  <td data-id={this.props.mealday[3].recipe.id}> {this.props.mealday[3].recipe.name} </td>
+              {this.props.mealdays.map(meal =>
+                <tr className={meal[0].toLowerCase().slice(0,3)}>
+                  <td className="day-header"> <strong> {meal[0]} </strong> </td>
+                  <td data-id={meal[1].recipe.id}> {meal[1].recipe.name} </td>
+                  <td data-id={meal[2].recipe.id}> {meal[2].recipe.name} </td>
+                  <td data-id={meal[3].recipe.id}> {meal[3].recipe.name} </td>
                 </tr>
+                )}
               </tbody>
             </table>
 

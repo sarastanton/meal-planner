@@ -60,6 +60,11 @@
   margin: 2px;
 }
 
+.day-header {
+  text-align: left;
+  width: 10%
+}
+
 
 form {
   text-align: left;
@@ -76,10 +81,8 @@ input, checkbox  {
 
 td {
   height: 150px;
-  width: 23%
+  width: 30%
 }
-
-
 
 
 /* Chalkboard frame idea */

@@ -22,7 +22,7 @@ class MySavedMealPlansContainer extends Component {
       <React.Fragment>
         <div className="container">
           This is the MySavedMealPlans Container component.
-        {this.props.mealdays.map(mealday => <Mealdays mealday={mealday} />) }
+        <Mealdays mealdays={this.props.mealdays} />
         <div className="shopping">
           <RecipeSpotlight recipeDirection={"above"} changeHandler={this.handleOnChange} listType={this.checkboxList} selection={this.props.mealSelection} />
           <ShoppingListContainer />
