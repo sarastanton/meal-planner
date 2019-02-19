@@ -22,9 +22,9 @@ class MySavedMealPlansContainer extends Component {
       <React.Fragment>
         <div className="container">
           This is the MySavedMealPlans Container component.
-        <Mealdays mealdays={this.props.mealdays} />
+        <Mealdays mealdays={this.props.groupedMealdays} allMealdays={this.props.allMealdays} />
         <div className="shopping">
-          <RecipeSpotlight recipeDirection={"above"} changeHandler={this.handleOnChange} listType={this.checkboxList} selection={this.props.mealSelection} />
+          <RecipeSpotlight recipeDirection={"above"} changeHandler={this.handleOnChange} listType={this.checkboxList} selection={this.props.mealSelection.recipe} />
           <ShoppingListContainer />
         </div>
         </div>
@@ -42,7 +42,8 @@ class MySavedMealPlansContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    mealdays: state.mealdays.mealdays,
+    allMealdays: state.mealdays.allMealdays,
+    groupedMealdays: state.mealdays.groupedMealdays,
     mealSelection: state.mealdays.mealSelection
   }
 }

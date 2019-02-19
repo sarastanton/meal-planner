@@ -61,7 +61,8 @@
 }
 
 .day-header {
-  text-align: left;
+  text-align: right;
+  vertical-align: center;
   width: 10%
 }
 
@@ -80,8 +81,9 @@ input, checkbox  {
 }
 
 td {
+  vertical-align: center;
   height: 150px;
-  width: 30%
+  width: 20%
 }
 
 
