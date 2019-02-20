@@ -4,3 +4,10 @@ export const addToShoppingList = item => {
     item
   }
 }
+
+export const removeFromShoppingList = item => {
+  return {
+    type: "REMOVE_FROM_SHOPPING_LIST",
+    item
+  }
+}

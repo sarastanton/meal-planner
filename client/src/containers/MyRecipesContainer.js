@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Recipe from '../components/recipes/recipe';
-import RecipeSpotlight from '../components/recipes/recipeSpotlight';
+import RecipeSpotlightPlainList from '../components/recipes/recipeSpotlightPlainList';
 import RecipeForm from '../components/recipes/recipeForm';
 import { getMyRecipes } from '../actions/myRecipes'
 import { connect } from 'react-redux'
@@ -21,7 +21,7 @@ class MyRecipesContainer extends Component {
             My Saved Recipes:
             {this.props.recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />) }
           </div>
-            <RecipeSpotlight allRecipes={this.props.recipes} selection={this.props.recipeSelection} recipeDirection={"at left"} listType={this.plainList} />
+            <RecipeSpotlightPlainList allRecipes={this.props.recipes} selection={this.props.recipeSelection} recipeDirection={"at left"} listType={"plainList"} />
             <RecipeForm />
           </div>
       </React.Fragment>

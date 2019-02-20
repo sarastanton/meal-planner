@@ -41,16 +41,7 @@ export const recipesReducer = (state = initialRecipeState, action) => {
         ...state,
         recipeFormData: action.recipeFormData
       }
-      //
-      // case "RECEIVE_INGREDIENTS":
-      //   return {
-      //     ...state,
-      //     recipeFormData:
-      //       [...state.recipeFormData,
-      //       {ingredients_attributes: action.ingredients}
-      //       ]
-      //   }
-
+  
     default:
       return state;
 

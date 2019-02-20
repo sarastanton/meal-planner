@@ -7,6 +7,12 @@ export const ingredientsReducer = (state = [], action) => {
         shoppingList: [...state.shoppingList, action.item]
       };
 
+    case "REMOVE_FROM_SHOPPING_LIST":
+      return {
+        ...state,
+        shoppingList: state.shoppingList.filter(item => item.id !== action.item.id)
+      }
+
     default:
       return state;
 
