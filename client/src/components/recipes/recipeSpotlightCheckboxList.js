@@ -45,10 +45,6 @@ class RecipeSpotlightCheckboxList extends Component {
 
   handleChange = (ingredient, event) => {
     !!event.target.checked ? this.props.addToShoppingList(ingredient) : this.props.removeFromShoppingList(ingredient)
-    console.log(event.target)
-    console.log(event.target.checked)
-    console.log(ingredient)
-
   }
 
 }
