@@ -2,7 +2,7 @@ import React from 'react'
 
 const ShoppingListItem = props =>
   <div className="card">
-    This is the ShoppingListItem component.
+    {props.ingredient.quantity} {props.ingredient.unit} {props.ingredient.description}
   </div>
 
 

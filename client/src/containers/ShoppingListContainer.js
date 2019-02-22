@@ -13,30 +13,27 @@ class ShoppingListContainer extends Component {
         <div className="container">
           This is the ShoppingListContainer Container component.
             <div>
-              <select>
-                {arr.map(a =>
-                  <option> {a} </option>
-                )}
-              </select>
-              {arr.map(a =>
-                <div>
-                  <input type="checkbox" value={a} onChange={this.handleChange} />
-                </div>
+              {this.props.shoppingList.map(ingredient =>
+                <ShoppingListItem ingredient={ingredient}/>
               )}
             </div>
-          <ShoppingListItem />
         </div>
       </React.Fragment>
     )
   }
 
-  handleChange = (event) => {
-    console.log(`${event.target.value} - ${event.target.checked} `)
-  }
 
-  totalItems = () => {
-
-  }
+  // const totalItems = (items, key) => items.reduce(
+  //   (result, item) => ({
+  //     ...result,
+  //     [item[key]]: [
+  //       ...(result[item[key]] || []),
+  //       item,
+  //     ],
+  //   }),
+  //   {},
+  // );
+  // }
 
 
 }

@@ -48,4 +48,11 @@ class Mealdays extends Component {
 
   }
 
+  
+  //   <select>
+  //     {arr.map(a =>
+  //       <option> {a} </option>
+  //     )}
+  //   </select>
+
   export default connect(null, { sendMealdaySelection })(Mealdays)
