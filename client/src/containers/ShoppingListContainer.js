@@ -7,13 +7,26 @@ class ShoppingListContainer extends Component {
 
 
   render() {
-    const arr = ["a", "b", "c"]
+
+    const shoppingList = this.props.shoppingList;
+  //   const descKeys = [shoppingList.map(item => item.description)];
+  //   const unitKeys = [shoppingList.map(item => item.unit)];
+  //   const groupedShoppingList = [];
+  //   const reducer = (item, desc) => item.desc === desc
+  //
+  // const testGroup = shoppingList.forEach(item => {
+  //     return (shoppingList.reduce(i => i.description ===  item.description)
+  //     )
+  //   })
+
+    // console.log(testGroup)
+
     return(
       <React.Fragment>
         <div className="container">
           This is the ShoppingListContainer Container component.
             <div>
-              {this.props.shoppingList.map(ingredient =>
+              {shoppingList.map(ingredient =>
                 <ShoppingListItem ingredient={ingredient}/>
               )}
             </div>
@@ -22,6 +35,11 @@ class ShoppingListContainer extends Component {
     )
   }
 
+  groupByDesc = () => {
+
+  }
+
+  //  group by description and then by unit
 
   // const totalItems = (items, key) => items.reduce(
   //   (result, item) => ({
