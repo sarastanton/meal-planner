@@ -64,6 +64,7 @@
 }
 
 .day-header {
+  color: #f4f4f0;
   text-align: left;
   width: 15%
 }
@@ -82,6 +83,34 @@
 .navbar {
   height: 35px;
   background-color: darksalmon;
+}
+
+.mon {
+  color: #f2a3bd;
+}
+
+.tue {
+  color: #fad48b;
+}
+
+.wed {
+  color: #bcdf8a;
+}
+
+.thu {
+  color: #fad48b;
+}
+
+.fri {
+  color: #c4adc9;
+}
+
+.sat {
+  color: #6fe7db;
+}
+
+.sun {
+  color: #ed7777;
 }
 
 
