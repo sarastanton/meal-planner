@@ -18,7 +18,7 @@ class Mealdays extends Component {
     } else {
       // debugger
         return (
-          <div className="card frame">
+          <div className="frame">
             <table className="meals" onClick={this.handleOnClick}>
               <thead>
                 <tr>

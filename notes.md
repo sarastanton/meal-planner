@@ -1,6 +1,7 @@
 * Ingredient shopping list from recipe checklist
 * Make mealdays dropdown on double click
 * Edit/Delete buttons for recipes
+* Delete button for shopping list
 
 * Styling
 
