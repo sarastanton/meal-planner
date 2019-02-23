@@ -18,7 +18,7 @@ class Mealdays extends Component {
     } else {
       // debugger
         return (
-          <div className="card">
+          <div className="card frame">
             <table className="meals" onClick={this.handleOnClick}>
               <thead>
                 <tr>
@@ -48,7 +48,7 @@ class Mealdays extends Component {
 
   }
 
-  
+
   //   <select>
   //     {arr.map(a =>
   //       <option> {a} </option>

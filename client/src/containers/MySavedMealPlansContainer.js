@@ -15,7 +15,6 @@ class MySavedMealPlansContainer extends Component {
     return(
       <React.Fragment>
         <div className="container">
-          This is the MySavedMealPlans Container component.
         <Mealdays mealdays={this.props.groupedMealdays} allMealdays={this.props.allMealdays} />
         <div className="shopping">
           <RecipeSpotlightCheckboxList recipeDirection={"above"} listType={"checkboxList"} selection={this.props.mealSelection.recipe} />
