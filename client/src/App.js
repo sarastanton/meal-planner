@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import MealdaysContainer from './containers/MealdaysContainer';
+
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import MyRecipesContainer from './containers/MyRecipesContainer';
 import MySavedMealPlansContainer from './containers/MySavedMealPlansContainer';
-import RecipesContainer from './containers/RecipesContainer';
-import ShoppingListContainer from './containers/ShoppingListContainer';
 import SignInContainer from './containers/SignInContainer';
 import SignUpContainer from './containers/SignUpContainer';
 
@@ -13,15 +14,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <React.Fragment>
-          <MealdaysContainer />
-          <MyRecipesContainer />
-          <MySavedMealPlansContainer />
-          <RecipesContainer />
-          <ShoppingListContainer />
-          <SignInContainer />
-          <SignUpContainer />
-        </React.Fragment>
+        <Router>
+          <React.Fragment>
+            <Route exact path="/" component={MySavedMealPlansContainer} />
+            <Route exact path="/mealplan" component={MySavedMealPlansContainer} />
+            <Route exact path="/recipes" component={MyRecipesContainer} />
+            <Route exact path="/signup" component={SignUpContainer} />
+          </React.Fragment>
+        </Router>
       </div>
     );
   }
