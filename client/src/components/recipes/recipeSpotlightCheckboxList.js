@@ -30,7 +30,6 @@ class RecipeSpotlightCheckboxList extends Component {
               </tbody>
             </table>
             <br />
-            ADD EDIT/DELETE BUTTONS
           </React.Fragment>
         </div>
       )

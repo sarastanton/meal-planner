@@ -62,15 +62,19 @@ class RecipeForm extends Component {
     return (
       <div className="card card-holder">
         <form id="recipe-form" onSubmit={this.handleOnSubmit}>
-          <p>
+            <br/>
             <label htmlFor="name"><strong>Recipe Name: </strong></label>
+            <br/>
+            <br/>
             <input id="recipe-name" type="text" name="name" value={this.props.recipeFormData.name} onChange={this.handleOnChange}/>
-          </p>
-          <p>
+            <br/>
+            <br/>
             <label htmlFor="directions"><strong>Directions:</strong> </label>
+            <br />
+            <br/>
             <textarea id="recipe-directions" name="directions" value={this.props.recipeFormData.directions} onChange={this.handleOnChange}/>
-          </p>
-          <br/>
+            <br/>
+            <br/>
           {this.ingredientFormArray.map(i => <IngredientForm count={i} createRecipeObj={this.createRecipeObj}/>)}
           <br />
           <button onClick={this.handleOnClick}>Add another ingredient:</button>

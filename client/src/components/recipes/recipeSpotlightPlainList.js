@@ -6,6 +6,9 @@ class RecipeSpotlightPlainList extends Component {
     if (!!this.props.selection && Object.entries(this.props.selection).length !== 0) {
       return (
         <div className="card" key={this.props.selection.id}>
+        <a href=""><i className="material-icons" onClick={this.handleOnClick}>delete_forever</i></a>
+        <a href=""><i className="material-icons" onClick={this.handleOnClick}>edit</i></a>
+        <br />
           <React.Fragment>
             <h3>{this.props.selection.name}</h3>
             <p><strong> Directions: </strong></p> {this.props.selection.directions}
@@ -25,7 +28,7 @@ class RecipeSpotlightPlainList extends Component {
               </tbody>
             </table>
             <br />
-            ADD EDIT/DELETE BUTTONS
+
           </React.Fragment>
         </div>
       )
@@ -36,6 +39,11 @@ class RecipeSpotlightPlainList extends Component {
         </div>
       )
     }
+  }
+
+  handleOnClick = (event) => {
+    event.preventDefault()
+    alert(`Oof ${event.target}`)
   }
 
 }
