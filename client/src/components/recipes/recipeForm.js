@@ -76,8 +76,8 @@ class RecipeForm extends Component {
             <br/>
             <br/>
           {this.ingredientFormArray.map(i => <IngredientForm count={i} createRecipeObj={this.createRecipeObj}/>)}
-          <br />
           <button onClick={this.handleOnClick}>Add another ingredient:</button>
+          <br />
           <br />
           <input type="submit" />
         </form>
