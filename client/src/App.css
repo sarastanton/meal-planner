@@ -66,6 +66,22 @@
   width: 15%
 }
 
+.material-icons {
+  color: lemonchiffon;
+  float: right;
+}
+
+.top-right {
+  position: absolute;
+  top: 6px;
+  right: 6px
+}
+
+.navbar {
+  height: 35px;
+  background-color: darksalmon;
+}
+
 
 
 form {
@@ -92,16 +108,11 @@ h1, h2, h3, h4, h5, h6 {
   color: lemonchiffon;
 }
 
-.material-icons {
-  color: lemonchiffon;
-  float: right;
+label {
+  margin-left: 8px;
 }
 
-.top-right {
-  position: absolute;
-  top: 6px;
-  right: 6px
-}
+
 
 
 /* Chalkboard frame idea */
