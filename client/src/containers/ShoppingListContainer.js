@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ShoppingListItem from '../components/shoppingListItem';
 import { connect } from 'react-redux';
-import { addToShoppingList } from '../actions/shoppingList'
+import { addToShoppingList, removeFromShoppingList } from '../actions/shoppingList'
 
 class ShoppingListContainer extends Component {
 
@@ -9,17 +9,6 @@ class ShoppingListContainer extends Component {
   render() {
 
     const shoppingList = this.props.shoppingList;
-  //   const descKeys = [shoppingList.map(item => item.description)];
-  //   const unitKeys = [shoppingList.map(item => item.unit)];
-  //   const groupedShoppingList = [];
-  //   const reducer = (item, desc) => item.desc === desc
-  //
-  // const testGroup = shoppingList.forEach(item => {
-  //     return (shoppingList.reduce(i => i.description ===  item.description)
-  //     )
-  //   })
-
-    // console.log(testGroup)
 
     return(
       <React.Fragment>
@@ -27,7 +16,7 @@ class ShoppingListContainer extends Component {
           This is the ShoppingListContainer Container component.
             <div>
               {shoppingList.map(ingredient =>
-                <ShoppingListItem ingredient={ingredient}/>
+                <ShoppingListItem ingredient={ingredient} delete={this.removeFromDOMList}/>
               )}
             </div>
         </div>
@@ -35,24 +24,11 @@ class ShoppingListContainer extends Component {
     )
   }
 
-  groupByDesc = () => {
-
+  removeFromDOMList = ingredientId => {
+    const selection = this.props.shoppingList.filter(ing => ing.id === ingredientId)[0]
+    this.props.removeFromShoppingList(selection)
+    console.log(selection)
   }
-
-  //  group by description and then by unit
-
-  // const totalItems = (items, key) => items.reduce(
-  //   (result, item) => ({
-  //     ...result,
-  //     [item[key]]: [
-  //       ...(result[item[key]] || []),
-  //       item,
-  //     ],
-  //   }),
-  //   {},
-  // );
-  // }
-
 
 }
 
@@ -62,4 +38,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { addToShoppingList })(ShoppingListContainer)
+export default connect(mapStateToProps, { addToShoppingList, removeFromShoppingList })(ShoppingListContainer)

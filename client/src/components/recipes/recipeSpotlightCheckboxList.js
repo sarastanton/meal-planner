@@ -43,6 +43,7 @@ class RecipeSpotlightCheckboxList extends Component {
   }
 
   handleChange = (ingredient, event) => {
+    console.log(ingredient)
     !!event.target.checked ? this.props.addToShoppingList(ingredient) : this.props.removeFromShoppingList(ingredient)
   }
 
@@ -50,7 +51,7 @@ class RecipeSpotlightCheckboxList extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    shoppingList: state.ingredients.shoppingList
+    shoppingList: state.ingredients.shoppingList,
   }
 }
 
