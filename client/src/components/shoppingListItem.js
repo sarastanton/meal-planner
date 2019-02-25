@@ -13,7 +13,10 @@ export default class ShoppingListItem extends Component {
 
   handleOnClick = (event) => {
     event.preventDefault()
-    this.props.delete(parseInt(event.target.parentElement.parentElement.dataset.id))
+    let id = event.target.parentElement.parentElement.dataset.id;
+    this.props.delete(parseInt(id));
+    document.getElementsByName(id)[0].checked = false
+
   }
 
   // handleChange = (ingredient, event) => {

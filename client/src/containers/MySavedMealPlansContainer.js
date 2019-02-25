@@ -14,12 +14,12 @@ class MySavedMealPlansContainer extends Component {
   render() {
     return(
       <React.Fragment>
-        <div className="container">
-        <Mealdays mealdays={this.props.groupedMealdays} allMealdays={this.props.allMealdays} />
-        <div className="shopping">
-          <RecipeSpotlightCheckboxList recipeDirection={"above"} listType={"checkboxList"} selection={this.props.mealSelection.recipe} />
-          <ShoppingListContainer />
-        </div>
+        <div className="mealplan container">
+          <Mealdays mealdays={this.props.groupedMealdays} allMealdays={this.props.allMealdays} />
+          <div className="shopping">
+            <RecipeSpotlightCheckboxList recipeDirection={"above"} listType={"checkboxList"} selection={this.props.mealSelection.recipe} />
+            <ShoppingListContainer />
+          </div>
         </div>
       </React.Fragment>
     )
