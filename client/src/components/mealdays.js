@@ -21,7 +21,7 @@ class Mealdays extends Component {
           <div className="frame">
             <table className="meals" onClick={this.handleOnClick}>
               <thead>
-                <tr>
+                <tr className="meal-headers">
                   <th> </th>
                   <th> Breakfast </th>
                   <th> Lunch </th>
@@ -32,7 +32,7 @@ class Mealdays extends Component {
               <tbody>
               {this.props.mealdays.map(meal =>
                 <tr className={meal[0].toLowerCase().slice(0,3)}>
-                  <td className="day-header"> <strong> {meal[0]} </strong> </td>
+                  <td className="day-header"> {meal[0]} </td>
                   <td data-id={meal[1].id}> {meal[1].recipe.name} </td>
                   <td data-id={meal[2].id}> {meal[2].recipe.name} </td>
                   <td data-id={meal[3].id}> {meal[3].recipe.name} </td>
