@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import ShoppingListItem from '../components/shoppingListItem';
 import { connect } from 'react-redux';
 import { addToShoppingList, removeFromShoppingList } from '../actions/shoppingList'
-import { printerFriendlyShoppingList } from '../components/printShoppingList'
+import { PrinterFriendlyShoppingList } from '../components/printShoppingList'
 
 class ShoppingListContainer extends Component {
 
@@ -14,16 +15,23 @@ class ShoppingListContainer extends Component {
     return(
       <React.Fragment>
         <div className="container">
-          This is the ShoppingListContainer Container component.
+          Shopping List:
             <div>
               {shoppingList.map(ingredient =>
                 <ShoppingListItem ingredient={ingredient} delete={this.removeFromDOMList}/>
               )}
             </div>
+            <br />
+            <br />
             <div>
-              <button onClick={this.handleOnClick}>
-                Printer-Friendly Version
-              </button>
+              <Link
+                className="print-button"
+                to={{
+                    pathname: '/print',
+                    shoppingList: this.props.shoppingList
+                  }}>
+                Printer-Friendly List
+              </Link>
             </div>
         </div>
       </React.Fragment>
@@ -34,18 +42,6 @@ class ShoppingListContainer extends Component {
     const selection = this.props.shoppingList.filter(ing => ing.id === ingredientId)[0]
     this.props.removeFromShoppingList(selection)
     console.log(selection)
-  }
-
-  handleOnClick = (event) => {
-    event.preventDefault()
-    alert("You clicked on me!")
-    // <Redirect to={{
-    //         pathname: '/order',
-    //         state: { id: '123' }
-    //     }}
-    // />
-    //
-    // this.props.location.state.id
   }
 
 }
