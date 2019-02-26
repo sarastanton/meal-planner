@@ -3,6 +3,7 @@ import Recipe from '../components/recipes/recipe';
 import RecipeSpotlightPlainList from '../components/recipes/recipeSpotlightPlainList';
 import RecipeForm from '../components/recipes/recipeForm';
 import { getMyRecipes } from '../actions/myRecipes'
+import { deleteRecipe } from '../actions/myRecipes'
 import { connect } from 'react-redux'
 
 class MyRecipesContainer extends Component {
@@ -21,7 +22,8 @@ class MyRecipesContainer extends Component {
             My Saved Recipes:
             {this.props.recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />) }
           </div>
-            <RecipeSpotlightPlainList allRecipes={this.props.recipes} selection={this.props.recipeSelection} recipeDirection={"at left"} listType={"plainList"} />
+            <RecipeSpotlightPlainList allRecipes={this.props.recipes} selection={this.props.recipeSelection} recipeDirection={"at left"} listType={"plainList"}
+            delete={(id) => this.deleteRecipe(id)} />
             <RecipeForm />
           </div>
       </React.Fragment>
@@ -30,6 +32,10 @@ class MyRecipesContainer extends Component {
 
   plainList(ingredient) {
     return {__html: `${ingredient.quantity} ${ingredient.unit} ${ingredient.description}`}
+  }
+
+  deleteRecipe(id) {
+    this.props.deleteRecipe(id)
   }
 
 }
@@ -43,4 +49,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { getMyRecipes })(MyRecipesContainer)
+export default connect(mapStateToProps, { getMyRecipes, deleteRecipe })(MyRecipesContainer)

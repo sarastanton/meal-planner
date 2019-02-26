@@ -49,17 +49,20 @@ export const receiveRecipeFormData = recipeFormData => {
   }
 }
 
-// export const receiveIngredientArray = ingredientArray => {
-//   return {
-//     type: "RECEIVE_INGREDIENTS",
-//     ingredients: ingredientArray
-//   }
-// }
-
-// export const clearRecipeForm = () => {
-//   debugger
-//   console.log("clear Recipe Form ran")
-//   return {
-//     type: "CLEAR_RECIPE_FORM"
-//   }
-// }
+export const deleteRecipe = recipeId => {
+  return dispatch => {
+    return fetch(`${API_URL}/recipes/${recipeId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(response => response.json())
+    .then(recipe => {
+      dispatch({
+        type: "DELETE_DB_RECIPE",
+        recipe
+      })
+    })
+    .catch(error => console.log(error))
+  }
+}

@@ -30,6 +30,12 @@ export const recipesReducer = (state = initialRecipeState, action) => {
       recipes: [...state.recipes, action.recipe]
     };
 
+    case "DELETE_DB_RECIPE":
+      return {
+        ...state,
+        recipes: [...state.recipes.filter(recipe => recipe.id !== action.id)]
+      }
+
     case "CLEAR_RECIPE_FORM":
       return {
         ...state,
@@ -41,7 +47,7 @@ export const recipesReducer = (state = initialRecipeState, action) => {
         ...state,
         recipeFormData: action.recipeFormData
       }
-  
+
     default:
       return state;
 

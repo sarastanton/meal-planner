@@ -30,7 +30,7 @@ class RecipesController < ApplicationController
 
   def destroy
     if @recipe.destroy
-      render json: @recipes
+      render json: @recipe
     else
       render json: { message: @recipe.errors }, status: 400
     end
