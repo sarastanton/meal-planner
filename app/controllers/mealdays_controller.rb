@@ -1,6 +1,6 @@
 class MealdaysController < ApplicationController
 
-  before_action :find_mealday_in_params, only: [:show, :edit, :destroy]
+  before_action :find_mealday_in_params, only: [:show, :update, :destroy]
   before_action :set_all_mealdays, only: [:index, :destroy]
 
   def create
@@ -21,6 +21,7 @@ class MealdaysController < ApplicationController
   end
 
   def update
+    # byebug
     if @mealday.update(mealday_params)
       render json: @mealday, status: 200
     else

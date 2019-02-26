@@ -5,6 +5,7 @@ import RecipeSpotlightCheckboxList from '../components/recipes/recipeSpotlightCh
 import ShoppingListContainer from './ShoppingListContainer';
 import { connect } from 'react-redux';
 import { getMyMealdays } from '../actions/myMealdays';
+import { editMealday } from '../actions/myMealdays';
 import { getMyRecipes } from '../actions/myRecipes'
 
 
@@ -30,10 +31,9 @@ class MySavedMealPlansContainer extends Component {
           <button onClick={this.handleOnClick}>
             {this.state.buttonText} Meal Plan
           </button>
-          <p> {this.state.enabled ? 'true' : 'false'} </p>
           <div className="mealplan">
           {this.state.enabled ?
-            <RecipeDropdowns mealdays={this.props.groupedMealdays} recipes={this.props.recipes} />
+            <RecipeDropdowns mealdays={this.props.groupedMealdays} recipes={this.props.recipes} updateMealPlan={this.updateMealPlan} />
           :
             <Mealdays mealdays={this.props.groupedMealdays} allMealdays={this.props.allMealdays} />
           }
@@ -60,6 +60,10 @@ class MySavedMealPlansContainer extends Component {
     this.state.enabled ? alert("I should fire a PATCH request") : console.log("dropdowns enabled")
   }
 
+  updateMealPlan = (updateData) => {
+    this.props.editMealday(updateData)
+  }
+
 }
 
 const mapStateToProps = (state) => {
@@ -71,4 +75,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { getMyMealdays, getMyRecipes })(MySavedMealPlansContainer)
+export default connect(mapStateToProps, { getMyMealdays, getMyRecipes, editMealday })(MySavedMealPlansContainer)

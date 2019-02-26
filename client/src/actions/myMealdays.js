@@ -20,22 +20,22 @@ export const sendMealdaySelection = selection => {
   }
 }
 
-// export const editMealday = mealdayData => {
-//   return dispatch => {
-//     return fetch(`${API_URL}/mealdays/${mealdayData.id}`, {
-//       method: "PATCH",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify({ mealday: mealdayData })
-//     // }).then(console.log(mealdayData))
-//     }).then(response => response.json())
-//     .then(mealday => {
-//       dispatch({
-//         type: "UPDATE_SAVED_MEALDAY",
-//         recipe
-//       })
-//     })
-//     .catch(error => console.log(error))
-//   }
-// }
+export const editMealday = mealdayData => {
+  return dispatch => {
+    return fetch(`${API_URL}/mealdays/${mealdayData.mealDayId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ recipe_id: mealdayData.recipeId })
+    }).then(response => response.json())
+      .then(dataJSON => console.log(dataJSON))
+    // .then(updatedMealday => {
+    //   dispatch({
+    //     type: "UPDATE_SAVED_MEALDAY",
+    //     updatedMealday
+    //   })
+    // })
+    .catch(error => console.log(error))
+  }
+}

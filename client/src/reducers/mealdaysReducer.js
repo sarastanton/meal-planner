@@ -27,10 +27,11 @@ export const mealdaysReducer = (state = initialMealdaysState, action) => {
         mealSelection: action.selection
       };
 
-    // case "UPDATE_SAVED_MEALDAY":
-    // return {
-    //   ...state, updatedMealday: action.mealday
-    // }
+    case "UPDATE_SAVED_MEALDAY":
+    return {
+      ...state, allMealdays:
+        [...state.allMealdays, action.updatedMealday]
+    }
 
     default:
       return state;
