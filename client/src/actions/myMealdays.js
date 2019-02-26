@@ -29,13 +29,12 @@ export const editMealday = mealdayData => {
       },
       body: JSON.stringify({ recipe_id: mealdayData.recipeId })
     }).then(response => response.json())
-      .then(dataJSON => console.log(dataJSON))
-    // .then(updatedMealday => {
-    //   dispatch({
-    //     type: "UPDATE_SAVED_MEALDAY",
-    //     updatedMealday
-    //   })
-    // })
+      .then(updatedMealday => {
+        dispatch({
+          type: "UPDATE_SAVED_MEALDAY",
+          updatedMealday
+        })
+      })
     .catch(error => console.log(error))
   }
 }

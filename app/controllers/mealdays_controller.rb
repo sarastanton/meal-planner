@@ -21,7 +21,6 @@ class MealdaysController < ApplicationController
   end
 
   def update
-    # byebug
     if @mealday.update(mealday_params)
       render json: @mealday, status: 200
     else

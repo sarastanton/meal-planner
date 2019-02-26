@@ -20,7 +20,7 @@ class MySavedMealPlansContainer extends Component {
     super()
     this.state = {
       enabled: false,
-      buttonText: "Edit"
+      buttonText: "Edit",
     }
   }
 
@@ -33,9 +33,10 @@ class MySavedMealPlansContainer extends Component {
           </button>
           <div className="mealplan">
           {this.state.enabled ?
-            <RecipeDropdowns mealdays={this.props.groupedMealdays} recipes={this.props.recipes} updateMealPlan={this.updateMealPlan} />
+            <RecipeDropdowns mealdays={this.props.groupedMealdays}
+            allMealdays={this.props.allMealdays} recipes={this.props.recipes} updateMealPlan={this.updateMealPlan} />
           :
-            <Mealdays mealdays={this.props.groupedMealdays} allMealdays={this.props.allMealdays} />
+            <Mealdays mealdays={this.props.groupedMealdays} allMealdays={this.props.allMealdays}/>
           }
             <div className="shopping">
               <div className="recipe">
@@ -57,11 +58,10 @@ class MySavedMealPlansContainer extends Component {
       enabled: !this.state.enabled,
       buttonText: this.state.buttonText === "Edit" ? 'Save' : "Edit"
     });
-    this.state.enabled ? alert("I should fire a PATCH request") : console.log("dropdowns enabled")
   }
 
   updateMealPlan = (updateData) => {
-    this.props.editMealday(updateData)
+    this.props.editMealday(updateData);
   }
 
 }
@@ -71,7 +71,7 @@ const mapStateToProps = (state) => {
     allMealdays: state.mealdays.allMealdays,
     groupedMealdays: state.mealdays.groupedMealdays,
     mealSelection: state.mealdays.mealSelection,
-    recipes: state.recipes.recipes
+    recipes: state.recipes.recipes,
   }
 }
 

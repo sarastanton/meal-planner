@@ -5,6 +5,10 @@ import { sendMealdaySelection } from '../actions/myMealdays'
 class Mealdays extends Component {
   // console.log(this.props.mealdays)
 
+  componentDidMount() {
+
+  }
+
   handleOnClick = (event) => {
     const targetId = parseInt(event.target.dataset.id)
     const mealSelection = this.props.allMealdays.filter(meal => meal.id === targetId)[0]
@@ -47,12 +51,5 @@ class Mealdays extends Component {
     }
 
   }
-
-
-  //   <select>
-  //     {arr.map(a =>
-  //       <option> {a} </option>
-  //     )}
-  //   </select>
 
   export default connect(null, { sendMealdaySelection })(Mealdays)

@@ -56,7 +56,7 @@ const sendUpdateData = (props, event) => {
     mealDayId: parseInt(event.target.dataset.id),
     recipeId: parseInt(event.target.value)
   };
-  props.updateMealPlan(updateData)
+  props.updateMealPlan(updateData);
 }
 
 
