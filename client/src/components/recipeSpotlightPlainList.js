@@ -42,7 +42,6 @@ class RecipeSpotlightPlainList extends Component {
   handleOnClickDelete = (event) => {
     event.preventDefault()
     this.props.delete(this.props.selection.id);
-    this.forceUpdate()
   }
 
 }

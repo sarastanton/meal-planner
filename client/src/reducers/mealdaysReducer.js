@@ -27,13 +27,20 @@ export const mealdaysReducer = (state = initialMealdaysState, action) => {
       };
 
     case "UPDATE_SAVED_MEALDAY":
-    return {
-      ...state,
-      allMealdays:
-        [...state.allMealdays, action.updatedMealday].sort((a, b) => a.id - b.id),
-      groupedMealdays:
-        [...state.groupedMealdays]
-    }
+      let prelim = [...state.allMealdays.filter(m => m.id !== action.updatedMealday.id)]
+      return {
+        ...state,
+        allMealdays: [...prelim, action.updatedMealday].sort((a, b) => a.id - b.id),
+        groupedMealdays: [
+          [].concat("Monday", [...prelim, action.updatedMealday].filter(day => day.week_day === "Monday").sort((a, b) => a.id - b.id)),
+          [].concat("Tuesday", [...prelim, action.updatedMealday].filter(day => day.week_day === "Tuesday").sort((a, b) => a.id - b.id)),
+          [].concat("Wednesday", [...prelim, action.updatedMealday].filter(day => day.week_day === "Wednesday").sort((a, b) => a.id - b.id)),
+          [].concat("Thursday", [...prelim, action.updatedMealday].filter(day => day.week_day === "Thursday").sort((a, b) => a.id - b.id)),
+          [].concat("Friday", [...prelim, action.updatedMealday].filter(day => day.week_day === "Friday").sort((a, b) => a.id - b.id)),
+          [].concat("Saturday", [...prelim, action.updatedMealday].filter(day => day.week_day === "Saturday").sort((a, b) => a.id - b.id)),
+          [].concat("Sunday", [...prelim, action.updatedMealday].filter(day => day.week_day === "Sunday").sort((a, b) => a.id - b.id)),
+        ],
+      }
 
     default:
       return state;

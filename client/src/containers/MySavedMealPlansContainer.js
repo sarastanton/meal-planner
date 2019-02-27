@@ -36,7 +36,7 @@ class MySavedMealPlansContainer extends Component {
             <RecipeDropdowns mealdays={this.props.groupedMealdays}
             allMealdays={this.props.allMealdays} recipes={this.props.recipes} updateMealPlan={this.updateMealPlan} />
           :
-            <Mealdays mealdays={this.props.groupedMealdays} allMealdays={this.props.allMealdays}/>
+            <Mealdays allMealdays={this.props.allMealdays} mealdays={this.props.groupedMealdays}/>
           }
             <div className="shopping">
               <div className="recipe">

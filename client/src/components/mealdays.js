@@ -3,11 +3,7 @@ import { connect } from 'react-redux'
 import { sendMealdaySelection } from '../actions/myMealdays'
 
 class Mealdays extends Component {
-  // console.log(this.props.mealdays)
 
-  componentDidMount() {
-
-  }
 
   handleOnClick = (event) => {
     const targetId = parseInt(event.target.dataset.id)
@@ -16,8 +12,8 @@ class Mealdays extends Component {
   }
 
   render() {
-  // debugger
-    if(this.props.mealdays === undefined) {
+
+    if(this.props.allMealdays === undefined) {
       return null
     } else {
       // debugger
