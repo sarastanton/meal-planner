@@ -13,10 +13,6 @@ import { ingredientsReducer } from './reducers/ingredientsReducer'
 
 const middleware = [thunk];
 
-// const initialState = {
-//
-// }
-
 const rootReducer = combineReducers({
   recipes: recipesReducer,
   mealdays: mealdaysReducer,
