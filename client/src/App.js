@@ -19,10 +19,11 @@ class App extends Component {
         <Router>
           <React.Fragment>
             <Route path="/print" component={PrinterFriendlyShoppingList}/>
-            <Route exact path="/" render={() => <Redirect to="/mymeals/mealplan" />} />
-            <Route path="/mymeals" component={NavBar} />
-            <Route path="/mymeals/mealplan" component={MySavedMealPlansContainer} />
-            <Route path="/mymeals/recipes" component={MyRecipesContainer} />
+            <Route exact path="/" render={() => <Redirect to="/mealplan" />} />
+            <Route path="/mealplan" component={NavBar} />
+            <Route path="/recipes" component={NavBar} />
+            <Route path="/mealplan" component={MySavedMealPlansContainer} />
+            <Route path="/recipes" component={MyRecipesContainer} />
           </React.Fragment>
         </Router>
       </div>

@@ -21,10 +21,10 @@ const activeStyle = {
 
 const NavBar = () =>
   <div className="navbar">
-    <NavLink to="/mymeals/mealplan" exact style={link} activeStyle={activeStyle} >
+    <NavLink to="/mealplan" exact style={link} activeStyle={activeStyle} >
       Mealplan
     </NavLink>
-    <NavLink to="/mymeals/recipes" exact style={link} activeStyle={activeStyle} >
+    <NavLink to="/recipes" exact style={link} activeStyle={activeStyle} >
       Recipes
     </NavLink>
   </div>;
