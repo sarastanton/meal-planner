@@ -4,6 +4,7 @@ import RecipeSpotlightPlainList from '../components/recipeSpotlightPlainList';
 import RecipeForm from '../components/recipeForm';
 import { getMyRecipes } from '../actions/myRecipes'
 import { deleteRecipe } from '../actions/myRecipes'
+import { sendRecipeSelection } from '../actions/myRecipes'
 import { connect } from 'react-redux'
 
 class MyRecipesContainer extends Component {
@@ -36,6 +37,7 @@ class MyRecipesContainer extends Component {
 
   deleteRecipe(id) {
     this.props.deleteRecipe(id)
+    this.props.sendRecipeSelection({})
   }
 
 }
@@ -49,4 +51,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { getMyRecipes, deleteRecipe })(MyRecipesContainer)
+export default connect(mapStateToProps, { getMyRecipes, deleteRecipe, sendRecipeSelection })(MyRecipesContainer)

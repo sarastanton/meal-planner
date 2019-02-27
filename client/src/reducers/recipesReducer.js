@@ -37,9 +37,11 @@ export const recipesReducer = (state = initialRecipeState, action) => {
     };
 
     case "DELETE_DB_RECIPE":
+    console.log(action)
+    console.log(action.id)
       return {
         ...state,
-        recipes: [...state.recipes.filter(recipe => recipe.id !== action.id)]
+        recipes: [...state.recipes.filter(recipe => recipe.id !== action.recipe.id)]
     };
 
     case "CLEAR_RECIPE_FORM":
