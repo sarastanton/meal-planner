@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import IngredientForm from './ingredientForm';
+import IngredientForm from './stateless/ingredientForm';
 import { connect } from 'react-redux';
-import { createNewDBRecipe } from '../../actions/myRecipes'
-import { receiveRecipeFormData } from '../../actions/myRecipes'
-// import { clearRecipeForm } from '../../actions/myRecipes'
+import { createNewDBRecipe } from '../actions/myRecipes'
+import { receiveRecipeFormData } from '../actions/myRecipes'
 
 class RecipeForm extends Component {
 

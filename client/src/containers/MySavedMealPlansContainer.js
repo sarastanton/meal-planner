@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Mealdays from '../components/mealdays';
-import RecipeDropdowns from '../components/recipes/RecipeDropdowns';
-import RecipeSpotlightCheckboxList from '../components/recipes/recipeSpotlightCheckboxList';
+import RecipeDropdowns from '../components/stateless/RecipeDropdowns';
+import RecipeSpotlightCheckboxList from '../components/recipeSpotlightCheckboxList';
 import ShoppingListContainer from './ShoppingListContainer';
 import { connect } from 'react-redux';
 import { getMyMealdays } from '../actions/myMealdays';

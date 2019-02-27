@@ -4,10 +4,8 @@ import { Switch, Redirect, BrowserRouter as Router, Route } from 'react-router-d
 
 import MyRecipesContainer from './containers/MyRecipesContainer';
 import MySavedMealPlansContainer from './containers/MySavedMealPlansContainer';
-import SignInContainer from './containers/SignInContainer';
-import SignUpContainer from './containers/SignUpContainer';
-import NavBar from './components/navbar'
-import PrinterFriendlyShoppingList from './components/printShoppingList'
+import NavBar from './components/stateless/navbar'
+import PrinterFriendlyShoppingList from './components/stateless/printShoppingList'
 
 import './App.css';
 

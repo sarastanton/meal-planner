@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addToShoppingList, removeFromShoppingList } from '../../actions/shoppingList'
+import { addToShoppingList, removeFromShoppingList } from '../actions/shoppingList'
 
 class RecipeSpotlightCheckboxList extends Component {
 

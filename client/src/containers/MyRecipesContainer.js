@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Recipe from '../components/recipes/recipe';
-import RecipeSpotlightPlainList from '../components/recipes/recipeSpotlightPlainList';
-import RecipeForm from '../components/recipes/recipeForm';
+import Recipe from '../components/recipe';
+import RecipeSpotlightPlainList from '../components/recipeSpotlightPlainList';
+import RecipeForm from '../components/recipeForm';
 import { getMyRecipes } from '../actions/myRecipes'
 import { deleteRecipe } from '../actions/myRecipes'
 import { connect } from 'react-redux'

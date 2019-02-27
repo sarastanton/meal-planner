@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import { ShoppingListItem } from '../components/shoppingListItem';
+import { ShoppingListItem } from '../components/stateless/shoppingListItem';
 import { connect } from 'react-redux';
 import { addToShoppingList, removeFromShoppingList } from '../actions/shoppingList'
-import { PrinterFriendlyShoppingList } from '../components/printShoppingList'
+import { PrinterFriendlyShoppingList } from '../components/stateless/printShoppingList'
 
 class ShoppingListContainer extends Component {
 

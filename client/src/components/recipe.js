@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { sendRecipeSelection } from '../../actions/myRecipes'
+import { sendRecipeSelection } from '../actions/myRecipes'
 
 class Recipe extends Component {
 
