@@ -9,7 +9,7 @@ class RecipeSpotlightCheckboxList extends Component {
       return (
         <div className="card" key={this.props.selection.id}>
           <React.Fragment>
-            <h3>{this.props.selection.name}</h3>
+            <p className="title">{this.props.selection.name}</p>
             <p><strong> Directions: </strong></p> {this.props.selection.directions}
             <br />
             <p><strong> Ingredients: </strong></p>

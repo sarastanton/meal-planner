@@ -49,6 +49,25 @@ export const receiveRecipeFormData = recipeFormData => {
   }
 }
 
+export const updateDBRecipe = recipeData => {
+  return dispatch => {
+    return fetch(`${API_URL}/recipes`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ recipe: recipeData })
+    }).then(response => response.json())
+    .then(recipe => {
+      dispatch({
+        type: "UPDATE_DB_RECIPE",
+        recipe
+      })
+    })
+    .catch(error => console.log(error))
+  }
+}
+
 export const deleteRecipe = recipeId => {
   return dispatch => {
     return fetch(`${API_URL}/recipes/${recipeId}`, {

@@ -3,10 +3,7 @@
   src: url('./assets/fonts/BlackBoard.ttf');
 }
 
-@font-face {
-  font-family: chalk-hand;
-  src: url('./assets/fonts/song.ttf');
-}
+/* font-family: 'Patrick Hand', cursive; */
 
 
 .App {
@@ -18,8 +15,8 @@
   border: solid black;
   margin: 10px;
   padding: 10px;
-  background-color: linen
-;
+  background-color: linen;
+  font-family: 'Patrick Hand', cursive;
 }
 
 .card {
@@ -27,14 +24,31 @@
   border-radius: 15px;
   /* box-shadow : 0 17px 50px rgba(0, 0, 0, 0.40) ; */
   background-color: darksalmon;
+  color: lemonchiffon;
   margin: 10px;
   padding: 10px;
+  flex: 1;
+  flex-basis: auto;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 16pt;
+}
+
+.card-holder {
+  overflow: scroll;
   flex: 1;
   flex-basis: auto
 }
 
 .card:hover {
   box-shadow : 0 17px 50px rgba(0, 0, 0, 0.40) ;
+}
+
+.day-header {
+  color: #f4f4f0;
+  text-align: left;
+  width: 15%;
+  font-family: blackboard;
+  font-size: 30pt;
 }
 
 .my-recipes {
@@ -45,17 +59,11 @@
   flex-basis: auto
 }
 
-.card-holder {
-  overflow: scroll;
-  flex: 1;
-  flex-basis: auto
-}
-
 .shopping {
-  /* display: flex; */
+  display: flex;
   position: relative;
-	width: 440px;
-	margin: 7% auto;
+	width: 1100px;
+	margin: 20px auto;
   padding: 14px;
 	border: tan solid 12px;
 	border-top: #bda27e solid 12px;
@@ -66,7 +74,7 @@
 }
 
 .mealplan {
-  display: flex;
+  /* display: flex; */
 
 }
 
@@ -75,8 +83,22 @@
   margin-right: auto;
   text-align: center;
   font-size: 17pt;
-  font-family: BlackBoard;
+  font-family: blackboard;
   font-size: 30pt;
+}
+
+.mp-btn {
+  background-color: darksalmon;
+  border-radius: 15px;
+  border: lemonchiffon;
+  color: #fad48b;
+  font-weight: bold;
+  padding: 15px 32px;
+  text-align: center;
+  width: 250px;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 26px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .ing-list {
@@ -87,14 +109,15 @@
   margin: 2px;
 }
 
-.day-header {
-  color: #f4f4f0;
-  text-align: left;
-  width: 15%;
-  font-family: BlackBoard;
-  font-size: 30pt;
-
+.title {
+  font-family: 'Patrick Hand', cursive;
+  font-weight: bold;
+  font-size: 26pt;
+  color: lemonchiffon;
+  margin: 10px auto;
 }
+
+
 
 .material-icons {
   color: lemonchiffon;
@@ -108,7 +131,7 @@
 }
 
 .navbar {
-  height: 35px;
+  height: 50px;
   background-color: darksalmon;
 }
 
@@ -157,7 +180,11 @@
 }
 
 .recipe {
-  height: 46%
+  width: 50%;
+}
+
+.shop-list {
+  width: 50%;
 }
 
 
@@ -202,8 +229,8 @@ label {
 .frame {
   color: white;
 	position: relative;
-	width: auto;
-	margin: 7% auto;
+	width: 1100px;
+	margin: 20px auto;
   padding: 14px;
 	border: tan solid 12px;
 	border-top: #bda27e solid 12px;

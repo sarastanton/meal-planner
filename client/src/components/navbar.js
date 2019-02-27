@@ -5,12 +5,13 @@ import { NavLink } from 'react-router-dom';
 const link = {
   width: '100px',
   padding: '12px',
-  margin: '0 20px ',
+  margin: '0 30px ',
   background: 'darksalmon',
   textDecoration: 'none',
   color: 'linen',
-  'font-size': '20px',
-  'font-weight': 'bold'
+  'font-size': '20pt',
+  'font-weight': 'bold',
+  'font-family': 'Patrick Hand, cursive'
 }
 
 const activeStyle = {

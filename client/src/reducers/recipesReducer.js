@@ -30,6 +30,12 @@ export const recipesReducer = (state = initialRecipeState, action) => {
       recipes: [...state.recipes, action.recipe]
     };
 
+    case "UPDATE_DB_RECIPE":
+    return {
+      ...state,
+      recipes: [...state.recipes, action.recipe]
+    };
+
     case "DELETE_DB_RECIPE":
       return {
         ...state,

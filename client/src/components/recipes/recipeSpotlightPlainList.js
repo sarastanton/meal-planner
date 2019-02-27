@@ -10,7 +10,7 @@ class RecipeSpotlightPlainList extends Component {
         <a href=""><i className="material-icons" id="edit" onClick={this.handleOnClick}>edit</i></a>
         <br />
           <React.Fragment>
-            <h3>{this.props.selection.name}</h3>
+            <p className="title">{this.props.selection.name}</p>
             <p><strong> Directions: </strong></p> {this.props.selection.directions}
             <br />
             <p><strong> Ingredients: </strong></p>
@@ -35,7 +35,7 @@ class RecipeSpotlightPlainList extends Component {
     } else {
       return (
         <div className="card">
-          Select a recipe at left to see its details:
+          <p>Select a recipe at left to see its details:</p>
         </div>
       )
     }
@@ -44,6 +44,11 @@ class RecipeSpotlightPlainList extends Component {
   handleOnClickDelete = (event) => {
     event.preventDefault()
     this.props.delete(this.props.selection.id)
+  }
+
+  handleOnClickEdit = (event) => {
+    event.preventDefault()
+    this.props.edit(this.props.selection.id)
   }
 
 }

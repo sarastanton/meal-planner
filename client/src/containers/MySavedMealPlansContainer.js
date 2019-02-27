@@ -28,7 +28,7 @@ class MySavedMealPlansContainer extends Component {
     return(
       <React.Fragment>
         <div className="container">
-          <button onClick={this.handleOnClick}>
+          <button className="mp-btn" onClick={this.handleOnClick}>
             {this.state.buttonText} Meal Plan
           </button>
           <div className="mealplan">
