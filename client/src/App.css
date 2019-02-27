@@ -123,10 +123,10 @@
 }
 
 .mp-btn {
-  background-color: coral;
+  background-color: darksalmon;
   border-radius: 5px;
   border: solid black;
-  color: lemonchiffon;
+  color: linen;
   font-weight: bold;
   padding: 15px 32px;
   text-align: center;
@@ -140,7 +140,7 @@
   text-decoration: none;
   border: solid rgba(0, 0, 0, 0.40) 1px;
   padding: 5px;
-  background-color: coral;
+  background-color: lightgray;
   color: black;
   border-radius: 5px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
