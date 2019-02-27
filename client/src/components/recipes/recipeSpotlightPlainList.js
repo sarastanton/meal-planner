@@ -28,7 +28,6 @@ class RecipeSpotlightPlainList extends Component {
               </tbody>
             </table>
             <br />
-
           </React.Fragment>
         </div>
       )

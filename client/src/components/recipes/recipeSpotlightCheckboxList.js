@@ -7,16 +7,22 @@ class RecipeSpotlightCheckboxList extends Component {
   render() {
     if (!!this.props.selection && Object.entries(this.props.selection).length !== 0) {
       return (
-        <div className="card" key={this.props.selection.id}>
+        <div className="recipe-card" key={this.props.selection.id}>
           <React.Fragment>
             <p className="title">{this.props.selection.name}</p>
-            <p><strong> Directions: </strong></p> {this.props.selection.directions}
-            <br />
+            <div className="redline"></div>
+
+            <p><strong> Directions: </strong></p>
+            <div className="blueline"></div>
+               <p>{this.props.selection.directions}</p>
+                  <div className="blueline"></div>
             <p><strong> Ingredients: </strong></p>
             <table className="ing-list">
               <tbody>
                 <td>
                    {this.props.selection.ingredients.map(ingredient =>
+                     <React.Fragment>
+                     <div className="blueline"></div>
                      <tr>
                        <h4>
                           <label>
@@ -25,7 +31,9 @@ class RecipeSpotlightCheckboxList extends Component {
                           </label>
                        </h4>
                      </tr>
+                     </React.Fragment>
                    )}
+                   <div className="blueline"></div>
                </td>
               </tbody>
             </table>
@@ -35,8 +43,9 @@ class RecipeSpotlightCheckboxList extends Component {
       )
     } else {
       return (
-        <div className="card">
+        <div className="recipe-card spot-card">
           Select a recipe above to see its details:
+          <div className="redline"></div>
         </div>
       )
     }
