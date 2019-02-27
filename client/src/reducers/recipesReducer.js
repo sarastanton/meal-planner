@@ -1,11 +1,11 @@
 const initialRecipeState = {
   recipes: [],
   newRecipe: {},
-  recipeFormData: [{
+  recipeFormData: {
     name: '',
-    description: '',
-    ingredients_attributes: []}
-  ],
+    directions: '',
+    ingredients_attributes: []
+  },
   recipeSelection: {}
 }
 
@@ -40,7 +40,7 @@ export const recipesReducer = (state = initialRecipeState, action) => {
       return {
         ...state,
         recipes: [...state.recipes.filter(recipe => recipe.id !== action.id)]
-      }
+    };
 
     case "CLEAR_RECIPE_FORM":
       return {

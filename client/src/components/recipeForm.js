@@ -13,7 +13,7 @@ class RecipeForm extends Component {
   }
 
   createIngredientsArray = () => {
-    const ingredientsArray = [];
+    let ingredientsArray = [];
 
     for (let i = 0; i < this.ingredientFormArray.length; i++) {
       const element = `ingredient-${this.ingredientFormArray[i]}`;
@@ -26,6 +26,13 @@ class RecipeForm extends Component {
     }
 
     return ingredientsArray
+  }
+
+  clearIngredientsArray = () => {
+    let list = document.getElementsByClassName("ingredient");
+    for (let item of list) {
+      item.value = "";
+    }
   }
 
   handleOnClick = event => {
@@ -44,6 +51,7 @@ class RecipeForm extends Component {
       ingredients_attributes: this.createIngredientsArray()
     };
     this.props.createNewDBRecipe(formData);
+    this.clearIngredientsArray();
     this.forceUpdate()
   };
 
@@ -62,19 +70,11 @@ class RecipeForm extends Component {
       <div className="card r-card">
         <form id="recipe-form" onSubmit={this.handleOnSubmit}>
             <br/>
-            <label htmlFor="name"><strong>Recipe Name: </strong></label>
-            <br/>
-            <br/>
+            <label htmlFor="name"><h3>Recipe Name: </h3></label>
             <input id="recipe-name" type="text" name="name" value={this.props.recipeFormData.name} onChange={this.handleOnChange}/>
-            <br/>
-            <br/>
-            <label htmlFor="directions"><strong>Directions:</strong> </label>
-            <br />
-            <br/>
+            <label htmlFor="directions"><h3>Directions:</h3> </label>
             <textarea id="recipe-directions" name="directions" value={this.props.recipeFormData.directions} onChange={this.handleOnChange}/>
-            <br/>
-            <br/>
-          {this.ingredientFormArray.map(i => <IngredientForm count={i} createRecipeObj={this.createRecipeObj}/>)}
+            {this.ingredientFormArray.map(i => <IngredientForm count={i} createRecipeObj={this.createRecipeObj}/>)}
           <button onClick={this.handleOnClick}>Add another ingredient:</button>
           <br />
           <br />

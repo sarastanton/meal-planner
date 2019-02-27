@@ -3,7 +3,7 @@ import React from 'react';
 const IngredientForm = props => {
   return (
     <div>
-      <strong>Ingredient {props.count}:</strong>
+      <h3>Ingredient {props.count}:</h3>
       <p>
         <label htmlFor="quantity">Quantity (should be a number): </label>
         <input className={`ingredient ingredient-${props.count} quantity`} type="text" name="quantity"/>
