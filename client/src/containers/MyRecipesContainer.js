@@ -9,23 +9,23 @@ import { connect } from 'react-redux'
 class MyRecipesContainer extends Component {
 
   componentDidMount() {
-    // debugger
     this.props.getMyRecipes()
   }
 
   render() {
-    // debugger
     return(
       <React.Fragment>
-        <div className="container my-recipes">
-          <div className="card-holder">
-            My Saved Recipes:
-            {this.props.recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />) }
-          </div>
+        <div className="container">
+          <div className="r-title">My Saved Recipes:</div>
+          <div className="my-recipes">
+            <div className="card-holder">
+              {this.props.recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />) }
+            </div>
             <RecipeSpotlightPlainList allRecipes={this.props.recipes} selection={this.props.recipeSelection} recipeDirection={"at left"} listType={"plainList"}
             delete={(id) => this.deleteRecipe(id)} />
             <RecipeForm />
           </div>
+        </div>
       </React.Fragment>
     )
   }

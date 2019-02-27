@@ -11,7 +11,8 @@ const link = {
   color: 'linen',
   'font-size': '20pt',
   'font-weight': 'bold',
-  'font-family': 'Patrick Hand, cursive'
+  'font-family': 'Patrick Hand, cursive',
+  'text-shadow': '1px 1px 2px black'
 }
 
 const activeStyle = {

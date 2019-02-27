@@ -25,6 +25,7 @@
 
 .recipe-card .title, label {
   color: black;
+  text-shadow: none;
 }
 
 .spot-card {
@@ -33,6 +34,7 @@
 
 .post {
   background-color: lemonchiffon;
+  border: none;
 }
 
 .redline {
@@ -60,6 +62,7 @@
   /* box-shadow : 0 17px 50px rgba(0, 0, 0, 0.40) ; */
   background-color: darksalmon;
   color: lemonchiffon;
+  text-shadow: 1px 1px 2px black;
   margin: 10px;
   padding: 10px;
   flex: 1;
@@ -68,10 +71,27 @@
   font-size: 16pt;
 }
 
+.r-card {
+  flex-basis: 20%;
+  overflow: scroll
+}
+
+.r-card label {
+  text-shadow: 1px 1px 2px black
+}
+
 .card-holder {
   overflow: scroll;
-  flex: 1;
-  flex-basis: auto
+  flex-basis: 25%;
+}
+
+.r-title {
+  font-family: 'Patrick Hand', cursive;
+  font-weight: bold;
+  font-size: 26pt;
+  color: darksalmon;
+  margin: 10px auto;
+  text-shadow: 1px 1px 2px gold;
 }
 
 .card:hover {
@@ -88,8 +108,8 @@
 
 .my-recipes {
   display: flex;
-  justify-content: center;
-  height: 600px;
+  justify-content: space-between;
+  height: 100vh;
   flex: 1;
   flex-basis: auto
 }
@@ -108,10 +128,6 @@
   background-image: url('./assets/img/fabric.png');
 }
 
-.mealplan {
-  /* display: flex; */
-
-}
 
 .meals {
   margin-left: auto;
@@ -125,9 +141,10 @@
 .mp-btn {
   background-color: darksalmon;
   border-radius: 5px;
-  border: solid black;
+  border: 2px solid black;
   color: linen;
   font-weight: bold;
+  text-shadow: 1px 1px 2px black;
   padding: 15px 32px;
   text-align: center;
   width: 250px;
@@ -161,6 +178,7 @@
   font-weight: bold;
   font-size: 26pt;
   color: lemonchiffon;
+  text-shadow: 1px 1px 2px black;
   margin: 10px auto;
 }
 
@@ -216,8 +234,6 @@
   margin: 50px;
 }
 
-
-
 .recipe {
   width: 50%;
 }
@@ -226,9 +242,6 @@
   width: 50%;
   height: inherit;
 }
-
-
-
 
 form {
   text-align: left;
@@ -253,12 +266,21 @@ th {
 
 h1, h2, h3, h4, h5, h6 {
   color: lemonchiffon;
+  text-shadow: 1px 1px 2px black;
 }
 
-label {
+form label {
   margin-left: 8px;
+  color: lemonchiffon;
 }
 
+p {
+  font-weight: bold;
+}
+
+h4 label {
+  text-shadow: none;
+}
 
 
 

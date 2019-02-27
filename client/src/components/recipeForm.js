@@ -59,7 +59,7 @@ class RecipeForm extends Component {
   render() {
     // debugger
     return (
-      <div className="card card-holder">
+      <div className="card r-card">
         <form id="recipe-form" onSubmit={this.handleOnSubmit}>
             <br/>
             <label htmlFor="name"><strong>Recipe Name: </strong></label>

@@ -5,10 +5,8 @@ import { sendRecipeSelection } from '../actions/myRecipes'
 class Recipe extends Component {
 
   handleOnClick = (props) => (event) => {
-    // debugger
     const targetId = parseInt(event.target.dataset.id)
     const recipeSelection = props.recipes.recipes.filter(recipe => recipe.id === targetId)[0]
-    // debugger
     props.sendRecipeSelection(recipeSelection)
   }
 
