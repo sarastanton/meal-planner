@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import ShoppingListItem from '../components/shoppingListItem';
+import { ShoppingListItem } from '../components/shoppingListItem';
 import { connect } from 'react-redux';
 import { addToShoppingList, removeFromShoppingList } from '../actions/shoppingList'
 import { PrinterFriendlyShoppingList } from '../components/printShoppingList'
@@ -14,14 +14,14 @@ class ShoppingListContainer extends Component {
 
     return(
       <React.Fragment>
-        <div className="container">
+        <div className="recipe-card spot-card post">
           Shopping List:
             <div>
               {shoppingList.map(ingredient =>
                 <ShoppingListItem ingredient={ingredient} delete={this.removeFromDOMList}/>
               )}
             </div>
-            <br />
+
             <br />
             <div>
               <Link

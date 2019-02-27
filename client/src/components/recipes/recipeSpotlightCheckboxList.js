@@ -44,7 +44,7 @@ class RecipeSpotlightCheckboxList extends Component {
     } else {
       return (
         <div className="recipe-card spot-card">
-          Select a recipe above to see its details:
+          <p>Select a recipe above to see its details:</p>
           <div className="redline"></div>
         </div>
       )
