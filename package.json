@@ -13,14 +13,11 @@
   },
   "engines": {
    "node": "6.11.2"
- },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "cd client && npm install && npm run build && cd ..",
-    "deploy": "cp -a client/build/. public/",
-    "postinstall": "npm run build && npm run deploy",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  },
+ "scripts": {
+   "build": "cd client && npm install && npm run build && cd ..",
+   "deploy": "cp -a client/build/. public/",
+   "postinstall": "npm run build && npm run deploy"
   },
   "eslintConfig": {
     "extends": "react-app"
