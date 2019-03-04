@@ -13,9 +13,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "yarn --cwd client install && yarn --cwd client build",
+    "build": "npm --cwd client install && npm --cwd client build",
     "deploy": "cp -a client/build/. public/",
-    "heroku-postbuild": "yarn build && yarn deploy",
+    "heroku-postbuild": "npm build && npm deploy",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
