@@ -48,4 +48,4 @@ class Mealdays extends Component {
 
   }
 
-  export default connect(null, { sendMealdaySelection })(Mealdays)
+export default connect(null, { sendMealdaySelection })(Mealdays)
