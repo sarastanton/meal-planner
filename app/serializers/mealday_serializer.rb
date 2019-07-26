@@ -3,8 +3,4 @@ class MealdaySerializer < ActiveModel::Serializer
 
   belongs_to :recipe
 
-  # def recipe
-  #   !self.object.recipe ? {name: "", directions: "", ingredients: []} : self.object.recipe
-  # end
-
 end
