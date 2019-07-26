@@ -16,7 +16,6 @@ class Mealdays extends Component {
     if(this.props.allMealdays === undefined) {
       return null
     } else {
-      // debugger
         return (
           <div className="frame">
             <table className="meals" onClick={this.handleOnClick}>

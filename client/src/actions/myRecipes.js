@@ -1,7 +1,6 @@
 const API_URL = process.env.REACT_APP_API_URL;
 
 export const getMyRecipes = () => {
-  // debugger
   return dispatch => {
     return fetch(`${API_URL}/recipes`)
     .then(response => response.json())

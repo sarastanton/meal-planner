@@ -1,7 +1,6 @@
 const API_URL = process.env.REACT_APP_API_URL;
 
 export const getMyMealdays = () => {
-  // debugger
   return dispatch => {
     return fetch(`${API_URL}/mealdays`)
     .then(response => response.json())

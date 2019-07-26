@@ -65,7 +65,6 @@ class RecipeForm extends Component {
 
 
   render() {
-    // debugger
     return (
       <div className="card r-card">
         <form id="recipe-form" onSubmit={this.handleOnSubmit}>
